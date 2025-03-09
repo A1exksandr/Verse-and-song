@@ -1,0 +1,10 @@
+body {
+  background: #FFFFFF;
+  padding: 0 24px;
+  color: #0A070E; /* Change my color to yellow */
+  margin: 0;
+  height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
