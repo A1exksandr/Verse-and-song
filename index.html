@@ -1,67 +1,182 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Название сайта</title>
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <img
-          src="assets/img/verse-and-song-logo.png"
-          alt="Логотип сайта verse-and-song"
-        />
-        <h1>verse & song</h1>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Главная</a>
-          </li>
-          <li>
-            <a href="authors.html">Авторы</a>
-          </li>
-          <li>
-            <a href="genres.html">Жанры</a>
-          </li>
-          <li>
-            <a href="about.html">Об авторе</a>
-          </li>
-          <li>
-            <a href="contacts.html">Контакты</a>
-          </li>
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="header__logo">
+      <span class="header__logo-text">Verse & Song</span>
+    </div>
+
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="" class="header__nav-link">Главная</a></li>
+          <li class="header__nav-item"><a href="" class="header__nav-link">Авторы</a></li>
+          <li class="header__nav-item"><a href="" class="header__nav-link">Жанры</a></li>
+          <li class="header__nav-item"><a href="" class="header__nav-link">Об авторе</a></li>
+          <li class="header__nav-item"><a href="" class="header__nav-link">Контакты</a></li>
         </ul>
       </nav>
-    </header>
 
-    <main>
-      <section class="search">
-        <!-- тут фоновая картинка img -->
-          <img src="assets/img/background.jpg" alt="" />
-        <h2>Найди любимого автора и исполнителя</h2>
-        <div class="search-block">
-          <form action="" method="post">
-            <input type="text" placeholder="Поиск" />
-            <input type="submit" value="Поиск" />
-          </form>
+      <div class="header__login">
+        <a class="header__login-link" href="">Войти</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero секция -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Откройте для себя лучшие песни и стихи</h1>
+        <div class="hero__search">
+          <div class="hero__search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <input class="hero__search-input" type="text" name="hero__search" id="search"
+            placeholder="Например: Пушкин, Queen, Виктор Цой..">
+          <button class="hero__search-button">
+            Поиск
+          </button>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="featured">
-        <h2>Избранные произведения</h2>
+    <!-- Избранные стихи -->
+    <section>
+      <h2 class="section-title">Избранные стихи</h2>
+      <div class="items-grid">
+        <!-- Карточка стиха 1 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/f8e2cf/333333?text=Пушкин" alt="Я вас любил">
+          </div>
+          <h3 class="item-title">Я вас любил</h3>
+          <p class="item-subtitle">А.С. Пушкин</p>
+        </div>
 
-        <figure>
-          <img src="assets/img/featured.png" alt="" />
-          <figcaption>The road not taken</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/featured.png" alt="" />
-          <figcaption>Invictus</figcaption>
-        </figure>
-      </section>
-    </main>
-  </body>
+        <!-- Карточка стиха 2 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/eeeeee/333333?text=Лермонтов" alt="Парус">
+          </div>
+          <h3 class="item-title">Парус</h3>
+          <p class="item-subtitle">М.Ю. Лермонтов</p>
+        </div>
+
+        <!-- Карточка стиха 3 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/e5d9cf/333333?text=Есенин" alt="Письмо к женщине">
+          </div>
+          <h3 class="item-title">Письмо к женщине</h3>
+          <p class="item-subtitle">С.А. Есенин</p>
+        </div>
+
+        <!-- Карточка стиха 4 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/e8d8c9/333333?text=Цой" alt="Пачка сигарет">
+          </div>
+          <h3 class="item-title">Пачка сигарет</h3>
+          <p class="item-subtitle">Виктор Цой</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Лучшие песни -->
+    <section>
+      <h2 class="section-title">Лучшие песни</h2>
+      <div class="items-grid">
+        <!-- Карточка песни 1 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/e0e0e0/333333?text=Наутилус" alt="Наутилус Помпилиус">
+          </div>
+          <h3 class="item-title">Крылья</h3>
+          <p class="item-subtitle">Наутилус Помпилиус</p>
+        </div>
+
+        <!-- Карточка песни 2 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/dddddd/333333?text=Queen" alt="Queen">
+          </div>
+          <h3 class="item-title">Bohemian Rhapsody</h3>
+          <p class="item-subtitle">Queen</p>
+        </div>
+
+        <!-- Карточка песни 3 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/f0f0f0/333333?text=КиШ" alt="Король и Шут">
+          </div>
+          <h3 class="item-title">Кукла колдуна</h3>
+          <p class="item-subtitle">Король и Шут</p>
+        </div>
+
+        <!-- Карточка песни 4 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/e5e5e5/333333?text=Кино" alt="Кино">
+          </div>
+          <h3 class="item-title">Группа крови</h3>
+          <p class="item-subtitle">Кино</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Популярные авторы -->
+    <section>
+      <h2 class="section-title">Популярные авторы</h2>
+      <div class="items-grid">
+        <!-- Автор 1 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/d8d0c3/333333?text=Пушкин" alt="Пушкин А.С.">
+          </div>
+          <h3 class="item-title">Александр Пушкин</h3>
+        </div>
+
+        <!-- Автор 2 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/d8d0c3/333333?text=Лермонтов" alt="Лермонтов М.Ю.">
+          </div>
+          <h3 class="item-title">Михаил Лермонтов</h3>
+        </div>
+
+        <!-- Автор 3 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/d8d0c3/333333?text=Цой" alt="Виктор Цой">
+          </div>
+          <h3 class="item-title">Виктор Цой</h3>
+        </div>
+
+        <!-- Автор 4 -->
+        <div class="item-card">
+          <div class="item-image">
+            <img src="https://placehold.co/400x400/d8d0c3/333333?text=Есенин" alt="Есенин С.А.">
+          </div>
+          <h3 class="item-title">Сергей Есенин</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
 </html>
