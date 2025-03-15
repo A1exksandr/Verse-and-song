@@ -411,8 +411,79 @@ main {
   font-size: 1.4rem;
   color: #637587;
 }
+/*Стили для about.html*/
+
+.creator-container {
+  width: 100%;
+  margin-top: 3.2rem;
+}
+.creator__image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.creator__image-wrapper{
+   width: 12.8rem;
+   height: 12.8rem;
+   border-radius: 1.2rem;
+   overflow: hidden;
+   /* border: 1px solid red; */
+   margin-bottom: 2rem;
+ }
 
 
+.creator__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.2rem;
+  font-size: 2.4rem;
+  text-align: center;
+}
+.creator__info{
 
+}
+.creator__title {
+  font-size: 3.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+.creator__form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.4rem;
+}
 
+.creator__projects {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+.creator__contact {
+  font-size: 2.4rem;
+  text-align: center;
+}
+.creator__info--bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.creator__form--info{
+  margin-bottom: 0.4rem;
+}
+.creator__link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #121417;
+  padding: 1.6rem 0;
+}
+.creator__link:hover{
+  background-color: #E4EFE7;
+}
 
