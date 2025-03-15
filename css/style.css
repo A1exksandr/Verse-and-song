@@ -9,6 +9,16 @@ html {
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: block;
+}
+
+
 /* Базовые стили для странрицы */
 body,
 html {
@@ -273,3 +283,136 @@ main {
     text-align: center;
   }
 }
+
+
+/* Стили для блока с авторами */
+.authors {
+  margin-top: 2.4rem;
+  width: 100%;
+}
+.authors__title {
+  font-size: 3.6rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+}
+
+.authors__subtitle {
+    font-size: 1.6rem;
+    color:#637587;
+    margin-bottom: 3.2rem;
+}
+
+.authors__item{
+  margin-bottom: 1.2rem
+}
+
+
+.authors__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #121417;
+  padding: 1.6rem 0;
+  /* border: 1px solid red; */
+
+}
+
+.authors__link:hover {
+  background-color: #E4EFE7;
+}
+
+.authors__name {
+  font-size: 1.6rem;
+}
+
+.authors__link i {
+  color: #121417;
+  font-size: 1.8rem;
+}
+
+
+
+/* Стили для страницы поэта */
+.poet-container {
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.poet__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.poet__image-wrapper {
+  width: 12.8rem;
+  height: 12.8rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+    /* border: 1px solid red; */
+    margin-bottom: 2rem;
+
+}
+
+.poet__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.poet__name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.poet__info {
+  font-size: 1.4rem;
+  text-align: center;
+  color:#637587;
+}
+
+.poet__works-title {
+    font-size: 2.4rem;
+      /* text-align: center; */
+    margin-bottom: 2.2rem;
+}
+
+.poet__works-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 0;
+    /* border: 3px solid blue; */
+}
+
+.poet__work-content {
+  /* border: 1px solid red; */
+  flex: 1;
+}
+
+.poet__works-item i {
+  /* border: 1px solid green; */
+  font-size: 1.6rem;
+}
+
+
+
+.poet__work-title {
+  font-size: 1.8rem;
+  font-weight:500;
+  margin-bottom: 0.5rem
+}
+
+.poet__work-subtitle {
+  font-size: 1.4rem;
+  color: #637587;
+}
+
+
+
+
+
