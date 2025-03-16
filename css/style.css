@@ -24,7 +24,7 @@ body,
 html {
   font-family: "Roboto", sans-serif;
   color: #121417;
-  background-color: #FFFFFF;
+  background-color: whitesmoke;
 }
 
 /* Шапка */
@@ -437,7 +437,7 @@ main {
   flex-direction: column;
   align-items: center;
   margin-bottom: 3.2rem;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   text-align: center;
 }
 .creator__info{
@@ -457,12 +457,12 @@ main {
 }
 
 .creator__projects {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   text-align: center;
   margin-bottom: 0.4rem;
 }
 .creator__contact {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   text-align: center;
 }
 .creator__info--bio {
@@ -487,3 +487,90 @@ main {
   background-color: #E4EFE7;
 }
 
+/*Стили для музыканта*/
+.performer-container {
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.performer__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.2rem;
+
+}
+
+.performer__image-wrapper {
+  width: 92rem;
+  height: 48rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  position: relative; /* Важно: относительное позиционирование */
+  margin-bottom: 2rem;
+}
+
+.performer__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.performer__name, .performer__info {
+  position: absolute; /* Текст размещается относительно контейнера */
+  bottom: 1rem; /* Отступ от нижнего края */
+  left: 1rem; /* Отступ от левого края */
+  color: white;
+  font-size: 4.8rem;
+  font-weight: bold;
+  font-family: 'Noto Serif', serif;
+  margin: 0; /* Убираем отступы */
+  padding: 0; /* Убираем padding, если есть */
+}
+
+.performer__name {
+  bottom: 15%; /* Отступ от нижнего края для имени */
+  font-size: 2.4rem; /* Измените размер текста по желанию */
+}
+
+.performer__info {
+  bottom: 5%; /* Отступ от нижнего края для информации */
+  font-size: 1.6rem; /* Измените размер текста по желанию */
+}
+
+.performer__works-title {
+  font-size: 2.4rem;
+  /* text-align: center; */
+  margin-bottom: 2.2rem;
+}
+
+.performer__works-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 0;
+  /* border: 3px solid blue; */
+}
+
+.performer__work-content {
+  /* border: 1px solid red; */
+  flex: 1;
+}
+
+.performer__works-item i {
+  /* border: 1px solid green; */
+  font-size: 1.6rem;
+}
+
+
+
+.performer__work-title {
+  font-size: 1.8rem;
+  font-weight:500;
+  margin-bottom: 0.5rem
+}
+
+.performer__work-subtitle {
+  font-size: 1.4rem;
+  color: #637587;
+}
