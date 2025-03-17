@@ -176,12 +176,21 @@ main {
   margin-bottom: 5rem;
 }
 
+.items-grid--1gap {
+  gap: 1rem
+}
+
 .item-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: auto;
   min-width: 19.1rem;
+  transition: transform 0.3s ease;
+  margin-bottom: 1.6rem;
+}
+.item-card:hover {
+  transform: translateY(-0.5rem);
 }
 
 .item-image {
@@ -189,8 +198,22 @@ main {
   height: 19.1rem;
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.2rem;
 }
+.item-image--square {
+  border-radius: 1rem;
+}
+.item-image--square img {
+  transition: transform 0.5s ease;
+}
+
+.item-image--square:hover img {
+   transform: scale(1.15);
+}
+
+
+
+
 
 .item-image img {
   width: 100%;
@@ -573,4 +596,12 @@ main {
 .performer__work-subtitle {
   font-size: 1.4rem;
   color: #637587;
+}
+
+
+
+
+/* Стили для страницы жанров */
+.genres-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/img/hero-image.jpg');
 }
