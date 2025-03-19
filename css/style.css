@@ -645,3 +645,85 @@ main {
 .genres-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/img/hero-image.jpg');
 }
+
+.poem-title {
+  font-size: 2.4rem; /* Используйте размер шрифта по аналогии с другими заголовками */
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.poem-author, .poem-date, .poem-genre {
+  font-size: 1.6rem;
+  color: #637587;
+  margin-bottom: 1rem;
+}
+
+.poem-text {
+  font-size: 1.8rem; /* Увеличивает размер текста */
+  line-height: 0.5; /* Увеличивает межстрочное расстояние */
+  white-space: pre-wrap; /* Сохраняет переносы строк */
+}
+
+.author-link {
+  text-decoration: none;
+  transition: color 0.5s;
+  font-size: 1.6rem;
+  color: inherit;
+}
+
+.poet__link {
+  text-decoration: none;
+  transition: color 0.5s;
+  font-size: 1.6rem;
+  color: inherit;
+}
+.author-link:hover {
+  color: chocolate;
+}
+.poet__link:hover {
+  color: chocolate;
+}
+.footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.4rem;
+  color: #637587;
+}
+/*Дизайн плеера*/
+.poem-audio {
+  /* Размеры для элемента аудио */
+  width: 100%; /* Занимает всю ширину родительского контейнера */
+  height: 50px; /* Высота аудиоплеера */
+  border-radius: 10px; /* Скругленные углы */
+  background-color: #f0f0f0; /* Светлый фон для аудиоплеера */
+}
+
+/* Для видимых элементов управления */
+audio::-webkit-media-controls-panel {
+  background-color: #f0f0f0; /* Изменение фона панели */
+  color: #000; /* Цвет текста для контроля */
+  border-radius: 10px; /* Скругление */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-volume-slider-container {
+  background-color: #fff; /* Белый фон */
+  color: #000; /* Черный текст */
+  border-radius: 5px; /* Скругленные элементы */
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  background: transparent; /* Прозрачный фон для времени */
+  color: #000; /* Видимый текст */
+}
+
+.poem-audio + a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
+

@@ -1,79 +1,85 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Гражданская оборона</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гражданская оборона</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-<div class="container">
-  <header>
-    <div class="logo">
-      <img
-              src="assets/img/verse-and-song-logo.png"
-              alt="Логотип сайта verse-and-song"
-      />
-      <h1>verse & song</h1>
-    </div>
+<!-- Шапка сайта -->
+<header class="header">
+  <div class="header__logo">
+    <span class="header__logo-text">Verse & Song</span>
+  </div>
 
-    <nav>
-      <ul>
-        <li>
-          <a href="index.html">Главная</a>
-        </li>
-        <li>
-          <a href="authors.html">Авторы</a>
-        </li>
-        <li>
-          <a href="genres.html">Жанры</a>
-        </li>
-        <li>
-          <a href="about.html">Об авторе</a>
-        </li>
-        <li>
-          <a href="contacts.html">Контакты</a>
-        </li>
+  <!-- Навигационная панель -->
+  <div class="header__nav-wrapper">
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+        <li class="header__nav-item"><a href="authors.html" class="header__nav-link">Авторы</a></li>
+        <li class="header__nav-item"><a href="#" class="header__nav-link">Жанры</a></li>
+        <li class="header__nav-item"><a href="about.html" class="header__nav-link">Об авторе</a></li>
       </ul>
     </nav>
-  </header>
-  <IMG src="img/ГрОб_репетиция_в_Москве_Осень_2005.jpg">
-  <div>
-    «Гражданская Оборона» (сокращённо «ГрОб») — это культовая советская и российская рок-группа, основанная в 1984 году в Омске. Её создателем, лидером и единственным постоянным участником был Егор Летов (настоящее имя — Игорь Фёдорович Летов). Группа стала одним из символов андеграундной панк-культуры в СССР и России.
-<ul>
-  Основные факты о группе:
-    <li>Стиль: Музыка «Гражданской Обороны» сочетает элементы панк-рока, психоделии, лоу-фая (запись на низкокачественном
-      оборудовании) и экспериментального рока. Тексты песен часто были резкими, провокационными, с элементами абсурда, сатиры и социального протеста.</li>
-    <li>Идеология: Группа выражала анархистские, антисоветские и антибуржуазные взгляды. Тексты песен часто критиковали систему,
-      общество и массовую культуру.</li>
-    <li>История: Группа была частью «Сибирского андеграунда» — движения независимых музыкантов, которые записывали музыку на
-      домашних студиях и распространяли её через магнитоальбомы.</li>
-    <li>Известные альбомы: «Поганая молодёжь» (1985), «Хорошо!!» (1988), «Так закалялась сталь» (1988), «Всё идёт по плану»
-      (1988), «Боевой стимул» (1989), «Здорово и вечно» (1989) и многие другие.</li>
-    <li>Популярность: Несмотря на андеграундный статус, группа приобрела огромную популярность в 1980-х и 1990-х годах,
-      особенно среди молодёжи, которая искала альтернативу официальной культуре.</li>
-  <li>Известные песни:</li><ul>
-  <li>«Всё идёт по плану»</li>
-    <li>«Моя оборона»</li>
-    <li>«Тоталитаризм»</li>
-    <li>«Русское поле экспериментов»</li>
-    <li>«Здорово и вечно»</li>
-</ul>
-</ul>
+
+
+    <div class="header__login">
+      <a class="header__login-link" href="">Войти</a>
+    </div>
   </div>
-  <nav>
-    Список песен:
-  <ul>
-    <li><a href="Vselenskaja_bolshaja_ljubov.html">Вселенская Большая Любовь</a></li>
-    <li><a href="osenj.html">Осень</a></li>
-    <li><a href="sianie.html">Сияние</a></li>
-  </ul>
-  </nav>
-  <footer>
-    © 2025 г. Взято с официального сайта группы «Гражданская Оборона»
-     Все тексты представлены для ознакомления. Все права защищены.
-    <a href="https://www.gr-oborona.ru/" target="_blank"> www.gr-oborona.ru</a>
-  </footer>
-  <li><a href="info.html">Об авторе</a></li>
-</div>
+</header>
+<main>
+  <div class="performer-container">
+
+    <div class="performer__profile">
+      <div class="performer__image-wrapper">
+        <img src="assets/img/ГрОб_репетиция_в_Москве_Осень_2005.jpg" alt="Гражданская оборона" class="poet__image">
+        <h1 class="performer__name">Гражданская оборона</h1>
+        <p class="performer__info">1984-2008 - Советская панк-рок группа</p>
+      </div>
+    </div>
+
+
+    <section class="performer__works">
+      <h2 class="performer__works-title">Популярные песни</h2>
+      <ul class="performer__works-list">
+        <li class="performer__works-item">
+          <div class="performer__work-content">
+            <a href="Vselenskaja_bolshaja_ljubov.html" class="poet__link">
+            <h3 class="performer__work-title">Вселенская Большая Любовь</h3>
+            <p class="performer__work-subtitle">5:57</p>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </li>
+        <li class="performer__works-item">
+          <div class="performer__work-content">
+            <a href="osenj.html" class="poet__link">
+            <h3 class="performer__work-title">Осень</h3>
+            <p class="performer__work-subtitle">4:28</p>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </li>
+        <li class="performer__works-item">
+          <div class="performer__work-content">
+            <a href="sianie.html" class="poet__link">
+            <h3 class="performer__work-title">Сияние</h3>
+            <p class="performer__work-subtitle">1:46</p>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </li>
+      </ul>
+    </section>
+
+
+  </div>
+</main>
 </body>
 </html>

@@ -1,61 +1,91 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Осень</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Страница поэта</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <ul><li><a href="index.html">Назад на главное</a>
-            </li></ul>
+<!-- Шапка сайта -->
+<header class="header">
+    <div class="header__logo">
+        <span class="header__logo-text">Verse & Song</span>
+    </div>
+
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                <li class="header__nav-item"><a href="authors.html" class="header__nav-link">Авторы</a></li>
+                <li class="header__nav-item"><a href="" class="header__nav-link">Жанры</a></li>
+                <li class="header__nav-item"><a href="about.html" class="header__nav-link">Об авторе</a></li>
+            </ul>
         </nav>
 
-        <div class="poem">
-            <h1>Послушайте! (Владимир Маяковский, 1914 г.) </h1>
-        <p>Послушайте! <br>   
-        Ведь, если звезды зажигают —<br>
-        значит — это кому-нибудь нужно?<br>
-        Значит — кто-то хочет, чтобы они были?<br>
-        Значит — кто-то называет эти плево́чки жемчужиной?<br>
-        И, надрываясь<br>
-        в метелях полу́денной пыли,<br>
-        врывается к богу,<br>
-        боится, что опоздал,<br>
-        плачет,<br>
-        целует ему жилистую руку,<br>
-        просит —<br>
-        чтоб обязательно была звезда! —<br>
-        клянется —<br>
-        не перенесет эту беззвездную муку!<br>
-        А после<br>
-        ходит тревожный,<br>
-        но спокойный наружно.<br>
-        Говорит кому-то:<br>
-        «Ведь теперь тебе ничего?<br>
-        Не страшно?<br>
-        Да?!»<br>
-        Послушайте!<br>
-        Ведь, если звезды<br>
-        зажигают —<br>
-        значит — это кому-нибудь нужно?<br>
-        Значит — это необходимо,<br>
-        чтобы каждый вечер<br>
-        над крышами <br>
-        загоралась хоть одна звезда?! <br>
-        </p>
-        <audio src="audio/Mayakovsky-Poslushayte.ogg" controls controlsList="nodownload"></audio>
-        <footer>
-            ©1914г. Является народным достоянием
-        </footer>
+        <div class="header__login">
+            <a class="header__login-link" href="">Войти</a>
+        </div>
     </div>
-    <footer>
-        © 2025 Все тексты представлены для ознакомления. Права на тексты стихотворений, которым меньше 70 лет, принадлежат их авторам.
-    </footer>
-        <li><a href="info.html">Об авторе</a></li>
-</div>
+</header>
+<main class="main">
+    <section class="poem-section">
+        <div class="container">
+            <h1 class="poem-title">"Послушайте!"</h1>
+            <p class="poem-author">Автор: <a href="Majakovski.html" class="author-link">Владимир Маяковский</a></p>
+            <p class="poem-date">1914 год</p>
+            <p class="poem-genre">Жанр: лирическое стихотворение</p>
+            <a href="Majakovski.html" class="author-link">Ссылка на страницу автора</a>
+            <div class="poem-text">
+                <p>Послушайте! <br>
+                    Ведь, если звезды зажигают —<br>
+                    значит — это кому-нибудь нужно?<br>
+                    Значит — кто-то хочет, чтобы они были?<br>
+                    Значит — кто-то называет эти плево́чки жемчужиной?<br>
+                    И, надрываясь<br>
+                    в метелях полу́денной пыли,<br>
+                    врывается к богу,<br>
+                    боится, что опоздал,<br>
+                    плачет,<br>
+                    целует ему жилистую руку,<br>
+                    просит —<br>
+                    чтоб обязательно была звезда! —<br>
+                    клянется —<br>
+                    не перенесет эту беззвездную муку!<br>
+                    А после<br>
+                    ходит тревожный,<br>
+                    но спокойный наружно.<br>
+                    Говорит кому-то:<br>
+                    «Ведь теперь тебе ничего?<br>
+                    Не страшно?<br>
+                    Да?!»<br>
+                    Послушайте!<br>
+                    Ведь, если звезды<br>
+                    зажигают —<br>
+                    значит — это кому-нибудь нужно?<br>
+                    Значит — это необходимо,<br>
+                    чтобы каждый вечер<br>
+                    над крышами <br>
+                    загоралась хоть одна звезда?! <br>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">© 2023 Verse & Song. Все права защищены.</p>
+    </div>
+</footer>
 </body>
 </html>
 

@@ -1,71 +1,105 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вселенская Большая Любовь</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-<div class="container">
-  <nav>
-    <ul><li><a href="index.html">Назад на главное</a>
-    </li></ul>
-    <ul><li><a href="Grazhdanscaja_oborona.html">Назад к исполнителю</a>
-    </li></ul>
-  </nav>
+<!-- Шапка сайта -->
+<header class="header">
+    <div class="header__logo">
+        <span class="header__logo-text">Verse & Song</span>
+    </div>
 
-  <div class="poem">
-    <h1>Вселенская Большая Любовь (Егор Летов, 2002.11.13)</h1>
-    <p>
-Небо пустого цвета. Нас пожирает листопад <br>
-Исход из слепого лета и вслед погоня наугад <br>
-Кипит колокольный лепет, дымят забытые войска <br>
-А вдруг всё то, что ищем <br>
-обретается при вскрытии <br>
-телесного родного дорогого себя <br>
-<br>
-Вселенская Большая Любовь <br>
-Вселенская Большая Любовь<br>
-Вселенская Большая Любовь<br>
-<br>
-Моя бездонная копилка в пустоте<br>
-<br>
-Снега провожают дикий и лихорадочный поход<br>
-Вечерние густые лики, безостановочный народ<br>
-Бессмертные и живые в одной оскаленной цепи<br>
-А вдруг всё то, что ищем —<br>
-далеко за горизонтом<br>
-на смертельной истребительной дороге всё на север<br>
-        <br>
-        Вселенская Большая Любовь <br>
-        Вселенская Большая Любовь<br>
-        Вселенская Большая Любовь<br>
-        <br>
-Моя секретная калитка в пустоте<br>
-        <br>
-Зашить ледяную рану и впредь давиться леденцом<br>
-Шагать тяжело, упрямо или катиться колесом<br>
-Заглядывать в чужие окна, пытать счастливые дома —<br>
-А вдруг всё то, что ищем<br>
-прямо где-то здесь смеётся<br>
-например — внутри зеркально-новогоднего фонарика<br>
-        <br>
-        Вселенская Большая Любовь <br>
-        Вселенская Большая Любовь<br>
-        Вселенская Большая Любовь<br>
-        <br>
-Моя волшебная игрушка в пустоте<br>
-Моя голодная копилка в пустоте<br>
-Моя секретная калитка в пустоте.<br>
-    </p>
-      <audio src="audio/grazhdanskaja-oborona-vselenskaja-bolshaja-ljubov.mp3" controls controlsList="nodownload"></audio>
-      <footer>
-          ©2004 - 2025 гг. Взято с официального сайта группы «Гражданская Оборона»
-          <a href="https://www.gr-oborona.ru/" target="_blank"> www.gr-oborona.ru</a>
-      </footer>
-  </div>
-    <footer>
-        © 2025 Все тексты представлены для ознакомления. Права на тексты песен, их испонение принадлежат их авторам.
-    </footer>
-    <li><a href="info.html">Об авторе</a></li>
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                <li class="header__nav-item"><a href="authors.html" class="header__nav-link">Авторы</a></li>
+                <li class="header__nav-item"><a href="" class="header__nav-link">Жанры</a></li>
+                <li class="header__nav-item"><a href="about.html" class="header__nav-link">Об авторе</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__login">
+            <a class="header__login-link" href="">Войти</a>
+        </div>
+    </div>
+</header>
+<!-- Основной контент -->
+<main class="main-content">
+    <section class="poem-section">
+        <div class="container">
+            <h1 class="poem-title">Вселенская Большая Любовь</h1>
+            <p class="poem-author">Гражданская оборона</p>
+            <p class="poem-date">Дата публикации: 2002</p>
+            <audio controls controlslist="nodownload" class="poem-audio">
+                <source src="assets/audio/grazhdanskaja-oborona-vselenskaja-bolshaja-ljubov.mp3" type="audio/mpeg">
+                Тег audio не поддерживается вашим браузером.
+            </audio>
+            <div class="poem-text">
+                <p>
+                    Небо пустого цвета. Нас пожирает листопад <br>
+                    Исход из слепого лета и вслед погоня наугад <br>
+                    Кипит колокольный лепет, дымят забытые войска <br>
+                    А вдруг всё то, что ищем <br>
+                    обретается при вскрытии <br>
+                    телесного родного дорогого себя <br>
+                    <br>
+                    Вселенская Большая Любовь <br>
+                    Вселенская Большая Любовь<br>
+                    Вселенская Большая Любовь<br>
+                    <br>
+                    Моя бездонная копилка в пустоте<br>
+                    <br>
+                    Снега провожают дикий и лихорадочный поход<br>
+                    Вечерние густые лики, безостановочный народ<br>
+                    Бессмертные и живые в одной оскаленной цепи<br>
+                    А вдруг всё то, что ищем —<br>
+                    далеко за горизонтом<br>
+                    на смертельной истребительной дороге всё на север<br>
+                    <br>
+                    Вселенская Большая Любовь <br>
+                    Вселенская Большая Любовь<br>
+                    Вселенская Большая Любовь<br>
+                    <br>
+                    Моя секретная калитка в пустоте<br>
+                    <br>
+                    Зашить ледяную рану и впредь давиться леденцом<br>
+                    Шагать тяжело, упрямо или катиться колесом<br>
+                    Заглядывать в чужие окна, пытать счастливые дома —<br>
+                    А вдруг всё то, что ищем<br>
+                    прямо где-то здесь смеётся<br>
+                    например — внутри зеркально-новогоднего фонарика<br>
+                    <br>
+                    Вселенская Большая Любовь <br>
+                    Вселенская Большая Любовь<br>
+                    Вселенская Большая Любовь<br>
+                    <br>
+                    Моя волшебная игрушка в пустоте<br>
+                    Моя голодная копилка в пустоте<br>
+                    Моя секретная калитка в пустоте.<br>
+                </p>
+            </div>
+            <p class="poem-genre">Жанр: Панк</p>
+            <a href="https://gr-oborona.ru" class="author-link">Ссылка на официальный сайт группы</a>
+        </div>
+    </section>
+</main>
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">© 2025 Verse & Song. Все права защищены.</p>
+    </div>
+</footer>
 </body>
 </html>
