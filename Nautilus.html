@@ -1,66 +1,85 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Наутилус Помпилиус</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-<div class="container">
-    <header>
-        <div class="logo">
-            <img
-                    src="assets/img/verse-and-song-logo.png"
-                    alt="Логотип сайта verse-and-song"
-            />
-            <h1>verse & song</h1>
-        </div>
+<!-- Шапка сайта -->
+<header class="header">
+    <div class="header__logo">
+        <span class="header__logo-text">Verse & Song</span>
+    </div>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Главная</a>
-                </li>
-                <li>
-                    <a href="authors.html">Авторы</a>
-                </li>
-                <li>
-                    <a href="genres.html">Жанры</a>
-                </li>
-                <li>
-                    <a href="about.html">Об авторе</a>
-                </li>
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                <li class="header__nav-item"><a href="authors.html" class="header__nav-link">Авторы</a></li>
+                <li class="header__nav-item"><a href="#" class="header__nav-link">Жанры</a></li>
+                <li class="header__nav-item"><a href="about.html" class="header__nav-link">Об авторе</a></li>
             </ul>
         </nav>
-    </header>
-    <div>
-        Группа «Наутилус Помпилиус» — это советская и российская рок-группа, основанная в 1982 году в Свердловске (ныне
-        Екатеринбург).
-        Она стала одной из самых известных и влиятельных групп в истории русской рок-музыки. Лидером и вокалистом группы
-        был Вячеслав Бутусов, а автором большинства текстов — Илья Кормильцев (до своего ухода из группы в 1997 году).
-        Основные факты о группе:
-        Название: «Наутилус Помпилиус» отсылает к латинскому названию моллюска «Nautilus pompilius» (кораблик-помпилиус),
-        а также к подводной лодке
-        «Наутилус» из романа Жюля Верна.
-        Стиль: Музыка группы сочетает элементы рока, арт-рока, пост-панка и фолка. Тексты песен часто были философскими,
-        поэтичными и затрагивали темы одиночества, свободы, любви и поиска смысла жизни.
-        Популярность: Группа достигла пика популярности в конце 1980-х — начале 1990-х годов. Их песни стали символами
-        эпохи перестройки и гласности.
-        Известные песни: «Крылья», «Скованные одной цепью», «Прогулки по воде», «Шар цвета хаки», «Я хочу быть с тобой»,
-        «Гудбай, Америка!» и многие другие.
-        Распад: Группа официально прекратила существование в 1997 году, хотя позже были временные воссоединения для
-        концертов.
+
+
+        <div class="header__login">
+            <a class="header__login-link" href="">Войти</a>
+        </div>
     </div>
-    <nav>
-        Список песен:
-        <ul>
-        <li><a href="odinocaia_ptitsa.html">Одинокая птица</a></li>
-        </ul>
-    </nav>
-</div>
-<footer>
-    <p>© 2025 Все тексты представлены для ознакомления. Все права защищены.</p>
-</footer>
-<li><a href="info.html">Об авторе</a></li>
+</header>
+<main>
+    <div class="performer-container">
+
+        <div class="performer__profile">
+            <div class="performer__image-wrapper">
+                <img src="assets/img/nautilus.jpg" alt="Наутилус Помпилиус" class="poet__image">
+                <h1 class="performer__name">Наутилус Помпилиус</h1>
+                <p class="performer__info">1962-1990 - Советский рок музыкант</p>
+            </div>
+        </div>
+
+
+        <section class="performer__works">
+            <h2 class="performer__works-title">Популярные песни</h2>
+            <ul class="performer__works-list">
+                <li class="performer__works-item">
+                    <div class="performer__work-content">
+                        <a href="odinocaia_ptitsa.html" class="poet__link">
+                            <h3 class="performer__work-title">Одинокая птица</h3>
+                            <p class="performer__work-subtitle">4:43</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </li>
+                <li class="performer__works-item">
+                    <div class="performer__work-content">
+                        <a href="#" class="poet__link">
+                            <h3 class="performer__work-title">Хлоп хлоп</h3>
+                            <p class="performer__work-subtitle">4:28</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </li>
+                <li class="performer__works-item">
+                    <div class="performer__work-content">
+                        <a href="gruppa_krovi.html" class="poet__link">
+                            <h3 class="performer__work-title">Крылья</h3>
+                            <p class="performer__work-subtitle">4:46</p>
+                    </div>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </li>
+            </ul>
+        </section>
+
+
+    </div>
+</main>
 </body>
 </html>

@@ -1,90 +1,103 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Одинокая птица</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-<header>
-    <div class="logo">
-        <img
-                src="assets/img/verse-and-song-logo.png"
-                alt="Логотип сайта verse-and-song"
-        />
-        <h1>verse & song</h1>
+<!-- Шапка сайта -->
+<header class="header">
+    <div class="header__logo">
+        <span class="header__logo-text">Verse & Song</span>
     </div>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Главная</a>
-            </li>
-            <li>
-                <a href="authors.html">Авторы</a>
-            </li>
-            <li>
-                <a href="genres.html">Жанры</a>
-            </li>
-            <li>
-                <a href="about.html">Об авторе</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                <li class="header__nav-item"><a href="authors.html" class="header__nav-link">Авторы</a></li>
+                <li class="header__nav-item"><a href="" class="header__nav-link">Жанры</a></li>
+                <li class="header__nav-item"><a href="about.html" class="header__nav-link">Об авторе</a></li>
+            </ul>
+        </nav>
 
-        <div class="poem">
-            <h1>Одинокая Птица - Nautilus Pompilius</h1>
-            <p>
-                Одинокая птица, ты летишь высоко<br>
-                В антрацитовом небе безлунных ночей<br>
-                Повергая в смятенье бродяг и собак<br>
-                Красотой и размахом крылатых плечей<br>
-                <br>
-                У тебя нет птенцов, у тебя нет гнезда <br>
-                Тебя манит незримая миру звезда <br>
-                А в глазах у тебя неземная печаль <br>
-                Ты сильная птица, но мне тебя жаль <br>
-                <br>
-                Одинокая птица, ты летаешь высоко <br>
-                И лишь безумец был способен так влюбиться <br>
-                За тобою вслед подняться <br>
-                За тобою вслед подняться <br>
-                Чтобы вместе с тобой разбиться <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                <br>
-                Черный ангел печали, давай отдохнем <br>
-                Посидим на ветвях, помолчим в тишине <br>
-                Что на небе такого, что стоит того <br>
-                Чтобы рухнуть на камни тебе или мне <br>
-                <br>
-                Одинокая птица, ты летаешь высоко <br>
-                И лишь безумец был способен так влюбиться <br>
-                За тобою вслед подняться <br>
-                За тобою вслед подняться <br>
-                Чтобы вместе с тобой разбиться <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-                С тобою вместе <br>
-            </p>
-            <footer>
-                © 2025 Стихи для души. Все права защищены.
-            </footer>
-            <audio src="audio/nautilus-pompilius-odinokaja-ptica.mp3" controls controlsList="nodownload"></audio>
+        <div class="header__login">
+            <a class="header__login-link" href="">Войти</a>
         </div>
-        <footer>
-            © 2025 Все тексты представлены для ознакомления. Все права защищены.
-        </footer>
-        <li><a href="info.html">Об авторе</a></li>
     </div>
+</header>
+<!-- Основной контент -->
+<main class="main-content">
+    <section class="poem-section">
+        <div class="container">
+            <h1 class="poem-title">Одинокая птица</h1>
+            <p class="poem-author"><a href="Nautilus.html" class="author-link">Nautilus Pompilius</a></p>
+            <p class="poem-date">Дата публикации: 1995</p>
+            <audio controls controlslist="nodownload" class="poem-audio">
+                <source src="assets/audio/nautilus-pompilius-odinokaja-ptica.mp3" type="audio/mpeg">
+                Тег audio не поддерживается вашим браузером.
+            </audio>
+            <div class="poem-text">
+                <p>
+                    Одинокая птица, ты летишь высоко<br>
+                    В антрацитовом небе безлунных ночей<br>
+                    Повергая в смятенье бродяг и собак<br>
+                    Красотой и размахом крылатых плечей<br>
+                    <br>
+                    У тебя нет птенцов, у тебя нет гнезда <br>
+                    Тебя манит незримая миру звезда <br>
+                    А в глазах у тебя неземная печаль <br>
+                    Ты сильная птица, но мне тебя жаль <br>
+                    <br>
+                    Одинокая птица, ты летаешь высоко <br>
+                    И лишь безумец был способен так влюбиться <br>
+                    За тобою вслед подняться <br>
+                    За тобою вслед подняться <br>
+                    Чтобы вместе с тобой разбиться <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    <br>
+                    Черный ангел печали, давай отдохнем <br>
+                    Посидим на ветвях, помолчим в тишине <br>
+                    Что на небе такого, что стоит того <br>
+                    Чтобы рухнуть на камни тебе или мне <br>
+                    <br>
+                    Одинокая птица, ты летаешь высоко <br>
+                    И лишь безумец был способен так влюбиться <br>
+                    За тобою вслед подняться <br>
+                    За тобою вслед подняться <br>
+                    Чтобы вместе с тобой разбиться <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                    С тобою вместе <br>
+                </p>
+            </div>
+            <p class="poem-genre">Жанр: Рок</p>
+            <a href="https://butusov.ru/" class="author-link">Ссылка на официальный сайт группы</a>
+        </div>
+    </section>
+</main>
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">© 2023 Verse & Song. Все права защищены.</p>
+    </div>
+</footer>
 </body>
 </html>
