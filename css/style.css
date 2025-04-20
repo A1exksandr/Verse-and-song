@@ -734,3 +734,24 @@ audio::-webkit-media-controls-time-remaining-display {
 
 
 
+
+img.zoom {
+  transform: scale(1.15);
+  transition: transform .3s;
+}
+
+.view-badge {
+  margin-top: .4rem;
+  font-size: 1.2rem;
+  color: #637587;
+}
+
+.reset-btn {
+  margin-left: 2rem;
+  padding: .6rem 1rem;
+  font-size: 1.2rem;
+  background: #E4EFE7;
+  border: none;
+  border-radius: .4rem;
+  cursor: pointer;
+}
