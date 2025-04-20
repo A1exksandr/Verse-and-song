@@ -228,10 +228,22 @@ main {
 
 .item-subtitle {
   font-size: 1.4rem;
-  color: #637587;
-  text-align: center;
-}
+  text-decoration: none;
+  color: #555;
+  font-weight: inherit;
+  outline: none;
 
+}
+.item-subtitle a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+.item-subtitle a:hover,
+.item-subtitle a:focus {
+  text-decoration: underline;
+}
 /* Адаптивные стили */
 @media (max-width: 980px) {
   .item-card {
@@ -755,3 +767,14 @@ img.zoom {
   border-radius: .4rem;
   cursor: pointer;
 }
+
+.item-title a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+.item-title a:hover {
+  text-decoration: underline;
+}
+
