@@ -66,7 +66,7 @@
             <img src="https://placehold.co/400x400/f8e2cf/333333?text=Пушкин" alt="Я вас любил">
           </div>
           <h3 class="item-title"><a href="Ia_vas_lubil.html">Я вас любил</a></h3>
-          <p class="item-subtitle"><a href="poet.html">А.С. Пушкин</a></p>
+          <p class="item-subtitle">А.С. Пушкин</p>
         </div>
 
         <!-- Карточка стиха 2 -->
@@ -108,7 +108,7 @@
             <img src="https://placehold.co/400x400/e0e0e0/333333?text=Наутилус" alt="Наутилус Помпилиус">
           </div>
           <h3 class="item-title"><a href="odinocaia_ptitsa.html">Одинокая птица</a></h3>
-          <p class="item-subtitle"><a href="Nautilus.html">Наутилус Помпилиус</a></p>
+          <p class="item-subtitle">Наутилус Помпилиус</p>
         </div>
 
         <!-- Карточка песни 2 -->
@@ -180,5 +180,37 @@
   </main>
 
   <script src="./js/main.js" defer></script>
+  <script>
+    (function(){
+      const LS_KEY = 'vs_visits';
+
+      document.addEventListener('click', function(e){
+        // e.preventDefault();
+        // e.stopPropagation();
+        // console.log(e.target.closest('.item-card a[href]'));
+
+        const link = e.target.closest('.item-card a[href]')
+        if( !link ) return;
+        const href = link.getAttribute('href');
+        if( !href ) return;
+        const name = href.split('.')[0];
+
+        const stats = JSON.parse(localStorage.getItem(LS_KEY) || '{}') ;
+
+        if( !stats[name] ){
+          stats[name] = 1;
+        } else {
+          stats[name]++;
+        }
+
+        localStorage.setItem(LS_KEY, JSON.stringify(stats));
+
+      }, true)
+
+
+    })()
+
+
+  </script>
 </body>
 </html>

@@ -23,7 +23,6 @@ function liveSearch() {
   // filterLists(input.value); // Вызываем функцию фильтрации списков
 
   input.addEventListener('input', (e) => {
-    console.log(e.target.value); // a
     const query = e.target.value.toLowerCase(); // Получаем значение из input
     localStorage.setItem(KEYS.SEARCH, query); // Сохраняем значение в localStorage
     filterLists(query); // Вызываем функцию фильтрации списков
@@ -34,7 +33,6 @@ function liveSearch() {
     listRoots.forEach((listRoot) => {
       $$(':scope .item-card', listRoot).forEach((item) => {
         const text = item.textContent.toLowerCase(); // Получаем текст элемента
-        console.log(text);
         if (text.includes(query)) {
           item.style.display = ''; // Если текст совпадает, то показываем элемент
         } else {
