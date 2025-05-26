@@ -1,69 +1,76 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Береза</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Белая береза</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-<div class="container">
-    <header>
-        <div class="logo">
-            <img
-                    src="assets/img/verse-and-song-logo.png"
-                    alt="Логотип сайта verse-and-song"
-            />
-            <h1>verse & song</h1>
-        </div>
+<!-- Шапка сайта -->
+<header class="header">
+    <div class="header__logo">
+        <span class="header__logo-text">Verse & Song</span>
+    </div>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Главная</a>
-                </li>
-                <li>
-                    <a href="authors.html">Авторы</a>
-                </li>
-                <li>
-                    <a href="genres.html">Жанры</a>
-                </li>
-                <li>
-                    <a href="about.html">Об авторе</a>
-                </li>
-                <li>
-                    <a href="contacts.html">Контакты</a>
-                </li>
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+                <li class="header__nav-item"><a href="authors.html" class="header__nav-link">Авторы</a></li>
+                <li class="header__nav-item"><a href="genres.html" class="header__nav-link">Жанры</a></li>
+                <li class="header__nav-item"><a href="about.html" class="header__nav-link">Об авторе</a></li>
             </ul>
         </nav>
-    </header>
 
-    <div class="poem">
-       <h1>Берёза (Сергей Есенин, 1913 г.)</h1>
-<p>
-Белая берёза <br>
-Под моим окном <br>
-Принакрылась снегом,<br>
-Точно серебром.<br>
-На пушистых ветках<br>
-Снежною каймой<br>
-Распустились кисти<br>
-Белой бахромой.<br>
-И стоит берёза<br>
-В сонной тишине,<br>
-И горят снежинки<br>
-В золотом огне.<br>
-А заря, лениво<br>
-Обходя кругом,<br>
-Обсыпает ветки<br>
-Новым серебром.<br>
-        </p>
-        <footer>
-            ©1913г. Является народным достоянием
-        </footer>
+        <div class="header__login">
+            <a class="header__login-link" href="">Войти</a>
+        </div>
     </div>
-    <footer>
-        © 2025 Все тексты представлены для ознакомления. Права на тексты стихотворений, которым меньше 70 лет, принадлежат их авторам.
-    </footer>
-    <li><a href="info.html">Об авторе</a></li>
-</div>
+</header>
+<main class="main">
+    <section class="poem-section">
+        <div class="container">
+            <h1 class="poem-title">Белая береза</h1>
+            <p class="poem-author">Автор: <a href="Esenin.html" class="author-link">Сергей Есенин</a></p>
+            <p class="poem-date">1913 год</p>
+            <p class="poem-genre">Жанр: лирическое стихотворение</p>
+            <a href="Esenin.html" class="author-link">Ссылка на страницу автора</a>
+            <div class="poem-text">
+                <p>
+                    Белая берёза <br>
+                    Под моим окном <br>
+                    Принакрылась снегом,<br>
+                    Точно серебром.<br>
+                    На пушистых ветках<br>
+                    Снежною каймой<br>
+                    Распустились кисти<br>
+                    Белой бахромой.<br>
+                    И стоит берёза<br>
+                    В сонной тишине,<br>
+                    И горят снежинки<br>
+                    В золотом огне.<br>
+                    А заря, лениво<br>
+                    Обходя кругом,<br>
+                    Обсыпает ветки<br>
+                    Новым серебром.<br>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <p class="footer-text">© 2025 Verse & Song. Все права защищены.</p>
+    </div>
+</footer>
 </body>
 </html>

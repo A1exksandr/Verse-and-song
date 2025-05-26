@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница поэта</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="header__logo">
+      <span class="header__logo-text">Verse & Song</span>
+    </div>
+
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="index.html" class="header__nav-link">Главная</a></li>
+          <li class="header__nav-item"><a href="authors.html" class="header__nav-link">Авторы</a></li>
+          <li class="header__nav-item"><a href="genres.html" class="header__nav-link">Жанры</a></li>
+          <li class="header__nav-item"><a href="about.html" class="header__nav-link">Об авторе</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__login">
+        <a class="header__login-link" href="">Войти</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="poet-container">
+
+      <div class="poet__profile">
+        <div class="poet__image-wrapper">
+          <img src="https://placehold.co/400x400/f8e2cf/333333?text=Пушкин" alt="Пушкин" class="poet__image">
+        </div>
+        <h1 class="poet__name">Александр Пушкин</h1>
+        <p class="poet__info">1799-1837 - Русский поэт</p>
+      </div>
+
+      <section class="poet__works">
+        <h2 class="poet__works-title">Популярные стихотворения</h2>
+        <ul class="poet__works-list">
+          <li class="poet__works-item">
+            <div class="poet__work-content">
+              <a href="K...(ja_pomnjy...).html" class="poet__link">
+              <h3 class="poet__work-title">Я помню чудное мгновенье</h3>
+              <p class="poet__work-subtitle">Я помню чудное мгновенье</p>
+            </div>
+            <i class="fa-solid fa-ellipsis"></i>
+          </li>
+          <li class="poet__works-item">
+            <div class="poet__work-content">
+              <a href="#" class="poet__link">
+              <h3 class="poet__work-title">Я вас любил</h3>
+              <p class="poet__work-subtitle">Я вас любил</p>
+            </div>
+            <i class="fa-solid fa-ellipsis"></i>
+          </li>
+        </ul>
+      </section>
+
+
+    </div>
+  </main>
+</body>
+</html>

@@ -208,7 +208,7 @@ main {
 }
 
 .item-image--square:hover img {
-  transform: scale(1.15);
+   transform: scale(1.15);
 }
 
 
@@ -228,10 +228,22 @@ main {
 
 .item-subtitle {
   font-size: 1.4rem;
-  color: #637587;
-  text-align: center;
-}
+  text-decoration: none;
+  color: #555;
+  font-weight: inherit;
+  outline: none;
 
+}
+.item-subtitle a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+.item-subtitle a:hover,
+.item-subtitle a:focus {
+  text-decoration: underline;
+}
 /* Адаптивные стили */
 @media (max-width: 980px) {
   .item-card {
@@ -245,31 +257,31 @@ main {
 
 
 @media (max-width: 430px) {
-  .header__nav-wrapper {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .header__nav {
-    width: 100%;
-  }
+    .header__nav-wrapper {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+    .header__nav {
+      width: 100%;
+    }
 
-  .header__nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-  }
+         .header__nav-list {
+           flex-wrap: wrap;
+           justify-content: center;
+           flex-direction: column;
+           width: 100%;
+          align-items: center;
+         }
 
-  .header__nav-item {
-    margin: 0.8rem 1.5rem;
-    width: 100%;
-    text-align: center;
-  }
-  .header__nav-link {
-    padding: 0.7rem 0;
-  }
+    .header__nav-item {
+      margin: 0.8rem 1.5rem;
+      width: 100%;
+      text-align: center;
+    }
+    .header__nav-link {
+      padding: 0.7rem 0;
+    }
 
 }
 
@@ -360,9 +372,9 @@ main {
 }
 
 .authors__subtitle {
-  font-size: 1.6rem;
-  color:#637587;
-  margin-bottom: 3.2rem;
+    font-size: 1.6rem;
+    color:#637587;
+    margin-bottom: 3.2rem;
 }
 
 .authors__item{
@@ -414,8 +426,8 @@ main {
   height: 12.8rem;
   border-radius: 1.2rem;
   overflow: hidden;
-  /* border: 1px solid red; */
-  margin-bottom: 2rem;
+    /* border: 1px solid red; */
+    margin-bottom: 2rem;
 
 }
 
@@ -439,9 +451,9 @@ main {
 }
 
 .poet__works-title {
-  font-size: 2.4rem;
-  /* text-align: center; */
-  margin-bottom: 2.2rem;
+    font-size: 2.4rem;
+      /* text-align: center; */
+    margin-bottom: 2.2rem;
 }
 
 .poet__works-item {
@@ -449,7 +461,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 1.6rem 0;
-  /* border: 3px solid blue; */
+    /* border: 3px solid blue; */
 }
 
 .poet__work-content {
@@ -650,7 +662,7 @@ main {
 
 /* Стили для страницы жанров */
 .genres-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/img/hero-image.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/img/hero-image.jpg');
 }
 
 .poem-title {
@@ -733,4 +745,36 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 
+
+
+img.zoom {
+  transform: scale(1.15);
+  transition: transform .3s;
+}
+
+.view-badge {
+  margin-top: .4rem;
+  font-size: 1.2rem;
+  color: #637587;
+}
+
+.reset-btn {
+  margin-left: 2rem;
+  padding: .6rem 1rem;
+  font-size: 1.2rem;
+  background: #E4EFE7;
+  border: none;
+  border-radius: .4rem;
+  cursor: pointer;
+}
+
+.item-title a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+.item-title a:hover {
+  text-decoration: underline;
+}
 
