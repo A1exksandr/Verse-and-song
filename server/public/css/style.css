@@ -1,0 +1,825 @@
+html {
+  font-size: 10px;
+  /* 1rem = 10px для более простых вычислений */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: block;
+}
+
+
+/* Базовые стили для странрицы */
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  color: #121417;
+  background-color: whitesmoke;
+}
+
+/* Шапка */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  border-bottom: 0.1rem solid #637587;
+}
+
+.header__logo-text {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.header__nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.header__nav-item {
+  margin-left: 3.6rem;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  transition: color 0.5s;
+  font-size: 1.6rem;
+  color: inherit;
+}
+
+.header__nav-link:hover {
+  color: chocolate;
+}
+
+.header__nav-wrapper {
+  display: flex;
+}
+
+.header__login {
+  margin-left: 3.2rem;
+}
+
+.header__login-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.6rem;
+}
+
+main {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/img/hero-image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 24rem 0 17.6rem 0;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  margin-top: 3.6rem;
+}
+
+.hero__content {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  max-width: 80rem;
+  padding: 0 2rem;
+}
+
+.hero__title {
+  color: white;
+  font-size: 4.8rem;
+  font-weight: bold;
+  margin-bottom: 5.4rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.hero__search {
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 48rem;
+  margin: 0 auto;
+}
+
+.hero__search-icon {
+  position: absolute;
+  left: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #637587;
+  z-index: 1;
+  font-size: 1.8rem;
+}
+
+.hero__search-input {
+  height: 6.4rem;
+  padding: 0 12rem 0 4.5rem;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+}
+
+.hero__search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 1.9rem;
+  background-color: #1A80E5;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  font-size: 1.6rem;
+}
+
+/* Секции контента */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 6rem 0 1.6rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.items-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.items-grid--1gap {
+  gap: 1rem
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  min-width: 19.1rem;
+  transition: transform 0.3s ease;
+  margin-bottom: 1.6rem;
+}
+
+.item-card:hover {
+  transform: translateY(-0.5rem);
+}
+
+.item-image {
+  width: 19.1rem;
+  height: 19.1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 2.2rem;
+}
+
+.item-image--square {
+  border-radius: 1rem;
+}
+
+.item-image--square img {
+  transition: transform 0.5s ease;
+}
+
+.item-image--square:hover img {
+  transform: scale(1.15);
+}
+
+
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-title {
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.item-subtitle {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #555;
+  font-weight: inherit;
+  outline: none;
+
+}
+
+.item-subtitle a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+
+.item-subtitle a:hover,
+.item-subtitle a:focus {
+  text-decoration: underline;
+}
+
+/* Адаптивные стили */
+@media (max-width: 980px) {
+  .item-card {
+    width: 30%;
+  }
+
+  .hero__title {
+    font-size: 3.6rem;
+  }
+}
+
+
+@media (max-width: 430px) {
+  .header__nav-wrapper {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header__nav {
+    width: 100%;
+  }
+
+  .header__nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .header__nav-item {
+    margin: 0.8rem 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header__nav-link {
+    padding: 0.7rem 0;
+  }
+
+}
+
+
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .header__logo {
+    margin-bottom: 1.5rem;
+  }
+
+  .header__nav-item {
+    margin-left: 2rem;
+  }
+
+  .header__login {
+    margin-left: 2rem;
+  }
+
+
+  .header__nav-item {
+    margin: 0.8rem 1.5rem;
+  }
+
+  .item-card {
+    width: 45%;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__search {
+    width: 100%;
+    max-width: 48rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header__nav-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header__nav-item {
+    margin: 0.5rem 1rem;
+  }
+
+  .header__login {
+    margin: 1.5rem 0 0 0;
+  }
+
+  .item-card {
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+}
+
+
+/* Стили для блока с авторами */
+.authors {
+  margin-top: 2.4rem;
+  width: 100%;
+}
+
+.authors__title {
+  font-size: 3.6rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+}
+
+.authors__subtitle {
+  font-size: 1.6rem;
+  color: #637587;
+  margin-bottom: 3.2rem;
+}
+
+.authors__item {
+  margin-bottom: 1.2rem
+}
+
+
+.authors__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #121417;
+  padding: 1.6rem 0;
+  /* border: 1px solid red; */
+
+}
+
+.authors__link:hover {
+  background-color: #E4EFE7;
+}
+
+.authors__name {
+  font-size: 1.6rem;
+}
+
+.authors__link i {
+  color: #121417;
+  font-size: 1.8rem;
+}
+
+
+
+/* Стили для страницы поэта */
+.poet-container {
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.poet__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.2rem;
+}
+
+.poet__image-wrapper {
+  width: 12.8rem;
+  height: 12.8rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  /* border: 1px solid red; */
+  margin-bottom: 2rem;
+
+}
+
+.poet__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.poet__name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.poet__info {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #637587;
+}
+
+.poet__works-title {
+  font-size: 2.4rem;
+  /* text-align: center; */
+  margin-bottom: 2.2rem;
+}
+
+.poet__works-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 0;
+  /* border: 3px solid blue; */
+}
+
+.poet__work-content {
+  /* border: 1px solid red; */
+  flex: 1;
+}
+
+.poet__works-item i {
+  /* border: 1px solid green; */
+  font-size: 1.6rem;
+}
+
+
+
+.poet__work-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem
+}
+
+.poet__work-subtitle {
+  font-size: 1.4rem;
+  color: #637587;
+}
+
+/*Стили для about.html*/
+
+.creator-container {
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.creator__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator__image-wrapper {
+  width: 12.8rem;
+  height: 12.8rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.creator__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.2rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.creator__info {
+  /* Добавьте стили, если необходимо */
+}
+
+.creator__title {
+  font-size: 3.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.creator__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.4rem;
+}
+
+.creator__projects {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.creator__contact {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.creator__info--bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.creator__form--info {
+  margin-bottom: 0.4rem;
+}
+
+.creator__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #121417;
+  padding: 1.6rem 0;
+}
+
+.creator__link:hover {
+  background-color: chocolate;
+}
+
+/*Стили для музыканта*/
+.performer-container {
+  width: 100%;
+  margin-top: 3.2rem;
+}
+
+.performer__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.2rem;
+
+}
+
+.performer__image-wrapper {
+  width: 92rem;
+  height: 48rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  position: relative;
+  /* Важно: относительное позиционирование */
+  margin-bottom: 2rem;
+}
+
+.performer__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.performer__name,
+.performer__info {
+  position: absolute;
+  /* Текст размещается относительно контейнера */
+  bottom: 1rem;
+  /* Отступ от нижнего края */
+  left: 1rem;
+  /* Отступ от левого края */
+  color: white;
+  font-size: 4.8rem;
+  font-weight: bold;
+  font-family: 'Noto Serif', serif;
+  margin: 0;
+  /* Убираем отступы */
+  padding: 0;
+  /* Убираем padding, если есть */
+}
+
+.performer__name {
+  bottom: 15%;
+  /* Отступ от нижнего края для имени */
+  font-size: 2.4rem;
+  /* Измените размер текста по желанию */
+}
+
+.performer__info {
+  bottom: 5%;
+  /* Отступ от нижнего края для информации */
+  font-size: 1.6rem;
+  /* Измените размер текста по желанию */
+}
+
+.performer__works-title {
+  font-size: 2.4rem;
+  /* text-align: center; */
+  margin-bottom: 2.2rem;
+}
+
+.performer__works-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 0;
+  /* border: 3px solid blue; */
+}
+
+.performer__work-content {
+  /* border: 1px solid red; */
+  flex: 1;
+}
+
+.performer__works-item i {
+  /* border: 1px solid green; */
+  font-size: 1.6rem;
+}
+
+
+
+.performer__work-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem
+}
+
+.performer__work-subtitle {
+  font-size: 1.4rem;
+  color: #637587;
+}
+
+
+
+
+/* Стили для страницы жанров */
+.genres-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../assets/img/hero-image.jpg');
+}
+
+.poem-title {
+  font-size: 2.4rem;
+  /* Используйте размер шрифта по аналогии с другими заголовками */
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.poem-author,
+.poem-date,
+.poem-genre {
+  font-size: 1.6rem;
+  color: #637587;
+  margin-bottom: 1rem;
+}
+
+.poem-text {
+  font-size: 1.8rem;
+  /* Увеличивает размер текста */
+  line-height: 0.5;
+  /* Увеличивает межстрочное расстояние */
+  white-space: pre-wrap;
+  /* Сохраняет переносы строк */
+}
+
+.author-link {
+  text-decoration: none;
+  transition: color 0.5s;
+  font-size: 1.6rem;
+  color: inherit;
+}
+
+.poet__link {
+  text-decoration: none;
+  transition: color 0.5s;
+  font-size: 1.6rem;
+  color: inherit;
+}
+
+.author-link:hover {
+  color: chocolate;
+}
+
+.poet__link:hover {
+  color: chocolate;
+}
+
+.footer {
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.4rem;
+  color: #637587;
+}
+
+/*Дизайн плеера*/
+.poem-audio {
+  /* Размеры для элемента аудио */
+  width: 100%;
+  /* Занимает всю ширину родительского контейнера */
+  height: 50px;
+  /* Высота аудиоплеера */
+  border-radius: 10px;
+  /* Скругленные углы */
+  background-color: #f0f0f0;
+  /* Светлый фон для аудиоплеера */
+}
+
+/* Для видимых элементов управления */
+audio::-webkit-media-controls-panel {
+  background-color: #f0f0f0;
+  /* Изменение фона панели */
+  color: #000;
+  /* Цвет текста для контроля */
+  border-radius: 10px;
+  /* Скругление */
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-volume-slider-container {
+  background-color: #fff;
+  /* Белый фон */
+  color: #000;
+  /* Черный текст */
+  border-radius: 5px;
+  /* Скругленные элементы */
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  background: transparent;
+  /* Прозрачный фон для времени */
+  color: #000;
+  /* Видимый текст */
+}
+
+.poem-audio+a:hover {
+  text-decoration: underline;
+  /* Подчеркивание при наведении */
+}
+
+
+
+
+img.zoom {
+  transform: scale(1.15);
+  transition: transform .3s;
+}
+
+.view-badge {
+  margin-top: .4rem;
+  font-size: 1.2rem;
+  color: #637587;
+}
+
+.reset-btn {
+  margin-left: 2rem;
+  padding: .6rem 1rem;
+  font-size: 1.2rem;
+  background: #E4EFE7;
+  border: none;
+  border-radius: .4rem;
+  cursor: pointer;
+}
+
+.item-title a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  outline: none;
+}
+
+.item-title a:hover {
+  text-decoration: underline;
+}
