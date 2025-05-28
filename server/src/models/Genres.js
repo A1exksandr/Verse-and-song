@@ -8,6 +8,7 @@ const genreSchema = new Schema(
       unique: true,
     },
     description: String,
+    imageUrl: String
   },
   {
     timestamps: true,

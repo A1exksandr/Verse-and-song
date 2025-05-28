@@ -23,7 +23,14 @@ const workSchema = new Schema(
         ref: 'Genre',
       },
     ],
+    featured: {
+      type: Boolean,
+      default: false, // Indicates if the work is featured
+    },
     publicationDate: Date,
+    audioUrl: String,
+    duration: Number, // Duration in seconds
+    imageUrl: String, // URL to an image representing the work
   },
   {
     timestamps: true,
