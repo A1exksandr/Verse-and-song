@@ -41,43 +41,18 @@
 
 
       <!-- Лучшие песни -->
-      <!-- <section>
+       <section>
         <h2 class="section-title">Лучшие песни</h2>
         <div class="items-grid">
-
+          <% featureSongs.forEach(song => { %>
           <div class="item-card">
             <div class="item-image">
-              <img src="https://placehold.co/400x400/e0e0e0/333333?text=Наутилус" alt="Наутилус Помпилиус">
+              <img
+                      src="<%= song.imageUrl || 'https://placehold.co/400x400/f8e2cf/333333?text=' + song.author.name %>"
+                      alt="<%= song.title %>">
             </div>
             <h3 class="item-title"><a href="odinocaia_ptitsa.html">Одинокая птица</a></h3>
             <p class="item-subtitle">Наутилус Помпилиус</p>
-          </div>
-
-
-          <div class="item-card">
-            <div class="item-image">
-              <img src="https://placehold.co/400x400/dddddd/333333?text=Queen" alt="Queen">
-            </div>
-            <h3 class="item-title"><a href="Bohemian_Rhapsody.html">Bohemian Rhapsody</a></h3>
-            <p class="item-subtitle"><a href="Queen_band.html">Queen</a></p>
-          </div>
-
-
-          <div class="item-card">
-            <div class="item-image">
-              <img src="https://placehold.co/400x400/f0f0f0/333333?text=КиШ" alt="Король и Шут">
-            </div>
-            <h3 class="item-title"><a href="Kykla_kolduna.html">Кукла колдуна</a></h3>
-            <p class="item-subtitle"><a href="Korol_i_shut.html">Король и Шут</a></p>
-          </div>
-
-
-          <div class="item-card">
-            <div class="item-image">
-              <img src="https://placehold.co/400x400/e5e5e5/333333?text=Кино" alt="Кино">
-            </div>
-            <h3 class="item-title"><a href="gruppa_krovi.html">Группа крови</a></h3>
-            <p class="item-subtitle"><a href="victor_tsoi.html">Кино</a></p>
           </div>
         </div>
       </section>
@@ -86,36 +61,14 @@
       <section>
         <h2 class="section-title">Популярные авторы</h2>
         <div class="items-grid">
-
+          <% popularAuthors.forEach(autor => { %>
           <div class="item-card">
             <div class="item-image">
-              <img src="https://placehold.co/400x400/d8d0c3/333333?text=Пушкин" alt="Пушкин А.С.">
+              <img
+                      src="<%= autor.imageUrl || 'https://placehold.co/400x400/f8e2cf/333333?text=' + autor.author.name %>"
+                      alt="<%= autor.title %>">
             </div>
             <h3 class="item-title"><a href="Pushkin.html">Александр Пушкин</a></h3>
-          </div>
-
-
-          <div class="item-card">
-            <div class="item-image">
-              <img src="https://placehold.co/400x400/d8d0c3/333333?text=Лермонтов" alt="Лермонтов М.Ю.">
-            </div>
-            <h3 class="item-title"><a href="lermontov.html">Михаил Лермонтов</a></h3>
-          </div>
-
-
-          <div class="item-card">
-            <div class="item-image">
-              <img src="https://placehold.co/400x400/d8d0c3/333333?text=Цой" alt="Виктор Цой">
-            </div>
-            <h3 class="item-title"><a href="victor_tsoi.html">Виктор Цой</a></h3>
-          </div>
-
-
-          <div class="item-card">
-            <div class="item-image">
-              <img src="https://placehold.co/400x400/d8d0c3/333333?text=Есенин" alt="Есенин С.А.">
-            </div>
-            <h3 class="item-title"><a href="Esenin.html">Сергей Есенин</a></h3>
           </div>
         </div>
       </section> -->
