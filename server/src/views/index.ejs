@@ -28,8 +28,12 @@
                         src="<%= poem.imageUrl || 'https://placehold.co/400x400/f8e2cf/333333?text=' + poem.author.name %>"
                         alt="<%= poem.title %>">
                       </div>
-                      <h3 class="item-title"><a href="Ia_vas_lubil.html">Я вас любил</a></h3>
-                      <p class="item-subtitle">А.С. Пушкин</p>
+                      <h3 class="item-title">
+                        <a href="#">
+                          <%= poem.title %>
+                        </a>
+                    </h3>
+                      <p class="item-subtitle"> <%= poem.author.name %> </p>
                     </div>
                   <% }) %>
                 </div>
@@ -38,39 +42,45 @@
       <% } %>
 
 
-
-
       <!-- Лучшие песни -->
-       <section>
-        <h2 class="section-title">Лучшие песни</h2>
-        <div class="items-grid">
-          <% featureSongs.forEach(song => { %>
-          <div class="item-card">
-            <div class="item-image">
-              <img
-                      src="<%= song.imageUrl || 'https://placehold.co/400x400/f8e2cf/333333?text=' + song.author.name %>"
-                      alt="<%= song.title %>">
-            </div>
-            <h3 class="item-title"><a href="odinocaia_ptitsa.html">Одинокая птица</a></h3>
-            <p class="item-subtitle">Наутилус Помпилиус</p>
-          </div>
-        </div>
-      </section>
+      <% if (featuredSongs?.length > 0) { %>
+              <section>
+                <h2 class="section-title">Лучшие песни</h2>
+                <div class="items-grid">
+                  <% featuredSongs.forEach(song => { %>
+                    <div class="item-card">
+                      <div class="item-image
+">
+                        <img
+                        src="<%= song.imageUrl || 'https://placehold.co/400x400/f8e2cf/333333?text=' + song.author.name %>"
+                        alt="<%= song.title %>">
+                      </div>
+                      <h3 class="item-title
+"><a href="odinocaia_ptitsa.html">Одинокая птица</a></h3>
+                      <p class="item-subtitle">Наутилус Помпилиус</p>
+                    </div>
+                  <% }) %>
+                </div>
+              </section>
+      <% } %>
 
 
+
+      <% if (featuredAuthors?.length> 0) { %>
       <section>
         <h2 class="section-title">Популярные авторы</h2>
         <div class="items-grid">
-          <% popularAuthors.forEach(autor => { %>
+          <% featuredAuthors.forEach(author => { %>
           <div class="item-card">
             <div class="item-image">
               <img
-                      src="<%= autor.imageUrl || 'https://placehold.co/400x400/f8e2cf/333333?text=' + autor.author.name %>"
-                      alt="<%= autor.title %>">
+                      src="<%= 'https://placehold.co/400x400/f8e2cf/333333?text=' + author.name %>"
+                      alt="<%= author.name %>">
             </div>
-            <h3 class="item-title"><a href="Pushkin.html">Александр Пушкин</a></h3>
+            <h3 class="item-title"><a href="Pushkin.html"><%= author.name %></a></h3>
           </div>
+          <% }) %>
         </div>
-      </section> -->
+      </section>
+      <% } %>
 
-    <!-- </main> -->

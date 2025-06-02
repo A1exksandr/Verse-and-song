@@ -18,10 +18,11 @@ export const getHomePage = async (req, res) => {
       featured: true,
     })
       .populate('author title')
-      .limit(4); // Получаем 4 избранных песен
+      .limit(4);
+
 
     // Получаем избранных авторов
-    const featuredAuthors = await Author.find().limit(5); // Получаем 5 авторов
+    const featuredAuthors = await Author.find().limit(4);
 
     res.render('index', {
       title: 'Главная страница',
@@ -37,3 +38,8 @@ export const getHomePage = async (req, res) => {
     // });
   }
 };
+
+
+// TODO: отдать список авторов
+// TODO: отдать список жанров
+// TODO: отдать раздел об авторе
