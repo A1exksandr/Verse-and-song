@@ -32,10 +32,10 @@ export const getHomePage = async (req, res) => {
     });
   } catch (error) {
     console.error('Ошибка при загрузке главной страницы:', error);
-    // res.status(500).render('error', {
-    //   title: 'Ошибка',
-    //   message: 'Произошла ошибка при загрузке страницы.',
-    // });
+    res.status(500).render('error', {
+      title: 'Ошибка',
+      message: 'Произошла ошибка при загрузке страницы.',
+    });
   }
 };
 

@@ -29,12 +29,12 @@ app.use(express.static(path.join(__dirname, '../public'))); // Serve static file
 app.use('/', pageRoutes); // GET http://localhost:3000/ ---> ejs response
 
 
-// app.use('/authors', pageRoutes); // GET http://localhost:3000/authors ---> ejs response
+app.use('/authors', pageRoutes); // GET http://localhost:3000/authors ---> ejs response
 
 //GET genres
-// app.use('/genres', pageRoutes); // GET http://localhost:3000/genres ---> ejs response
+app.use('/genres', pageRoutes); // GET http://localhost:3000/genres ---> ejs response
 
 // GET раздел об авторе
-// app.use('/about', pageRoutes); // GET http://localhost:3000/about ---> ejs response
+app.use('/about', pageRoutes); // GET http://localhost:3000/about ---> ejs response
 
 export default app;
