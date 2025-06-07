@@ -55,9 +55,12 @@
                         alt="<%= song.title %>">
                       </div>
                       <h3 class="item-title">
-                          <a href="odinocaia_ptitsa.html">Одинокая птица</a>
+                        <a href="#">
+                          <%= song.title %>
+                        </a>
                       </h3>
-                      <p class="item-subtitle">Наутилус Помпилиус</p>
+                      <p class="item-subtitle">
+                        <%= song.author.name %></p>
                     </div>
                   <% }) %>
                 </div>
@@ -77,7 +80,7 @@
                       src="<%= 'https://placehold.co/400x400/f8e2cf/333333?text=' + author.name %>"
                       alt="<%= author.name %>">
             </div>
-            <h3 class="item-title"><a href="Pushkin.html"><%= author.name %></a></h3>
+            <h3 class="item-title"><a href="#"><%= author.name %></a></h3>
           </div>
           <% }) %>
         </div>

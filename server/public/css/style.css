@@ -823,3 +823,53 @@ img.zoom {
 .item-title a:hover {
   text-decoration: underline;
 }
+
+/* Стили для счетчика результатов поиска */
+.search-results-header {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 3rem auto 2rem;
+  color: #121417;
+  text-align: center;
+  max-width: 110rem;
+  padding: 0 2rem;
+}
+
+/* Скрытие элементов при фильтрации */
+.item-card[style*="display: none"] {
+  display: none !important;
+}
+
+/* Анимация при фильтрации */
+.item-card {
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .search-results-header {
+    font-size: 2rem;
+    margin: 2rem auto 1.5rem;
+  }
+}
+
+/* Контейнер для результатов поиска */
+#search-results-container {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+#search-results-container .section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 4rem 0 1.6rem;
+  font-family: 'Noto Serif', serif;
+}
+
+#search-results-container .items-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}

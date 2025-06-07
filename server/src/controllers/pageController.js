@@ -2,26 +2,35 @@ import Works from '../models/Work.js';
 import Author from '../models/Author.js';
 import Genres from '../models/Genres.js';
 
+// В файле server/src/controllers/pageController.js
 export const getHomePage = async (req, res) => {
   try {
-    // Нам нужно получить избранные произведения, авторов и жанры для отображения на главной странице
     const featuredPoems = await Works.find({
       type: 'poem',
       featured: true,
     })
-      .populate('author title')
-      .limit(4); // Получаем 4 избранных стихотворений
+      .populate('author', 'name')
+      .populate('genres', 'name')
+      .limit(4);
 
-    // Получаем избранные песни
     const featuredSongs = await Works.find({
       type: 'song',
       featured: true,
     })
-      .populate('author title')
+      .populate('author', 'name')
+      .populate('genres', 'name')
       .limit(4);
 
-    // Получаем избранных авторов
     const featuredAuthors = await Author.find().limit(4);
+
+    // Добавьте эти логи!
+    console.log(
+      'Featured songs:',
+      featuredSongs.map((s) => ({
+        title: s.title,
+        author: s.author?.name,
+      }))
+    );
 
     res.render('index', {
       title: 'Главная страница',
