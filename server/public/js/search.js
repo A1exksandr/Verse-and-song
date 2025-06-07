@@ -3,18 +3,42 @@ const KEYS = {
 };
 
 const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+const $$ = (sel, root = document) => {
+  try {
+    const elements = root.querySelectorAll(sel);
+    return elements ? Array.from(elements) : [];
+  } catch (e) {
+    console.error('Ошибка при выборе элементов:', e);
+    return [];
+  }
+};
+
+let currentAbortController = null;
 
 // Функция для отправки запроса на сервер
 async function searchOnServer(query, type = 'all') {
+  if (currentAbortController) {
+    currentAbortController.abort();
+  }
+
+  currentAbortController = new AbortController();
+
   try {
     const response = await fetch(
-      `/api/v1/search?q=${encodeURIComponent(query)}&type=${type}`
+      `/api/v1/search?q=${encodeURIComponent(query)}&type=${type}`,
+      { signal: currentAbortController.signal }
     );
+
+    if (!response.ok) {
+      return null;
+    }
+
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Ошибка поиска:', error);
+    if (error.name !== 'AbortError') {
+      console.error('Ошибка поиска:', error);
+    }
     return null;
   }
 }
@@ -81,12 +105,12 @@ function displaySearchResults(searchResults, type) {
     searchResults.query.trim() !== ''
   ) {
     // Скрываем все оригинальные секции
-    const originalSections = $('main > section:not(.hero)');
+    const originalSections = $$('main > section:not(.hero)');
     originalSections.forEach((section) => {
       section.style.display = 'none';
     });
 
-    // Создаем контейнер для результатов, если его нет
+    // Создаем контейнер для результатов
     if (!searchResultsContainer) {
       searchResultsContainer = document.createElement('div');
       searchResultsContainer.id = 'search-results-container';
@@ -178,7 +202,7 @@ function displaySearchResults(searchResults, type) {
     }
   } else {
     // Если поиск пустой, показываем оригинальные секции
-    const originalSections = $('main > section:not(.hero)');
+    const originalSections = $$('main > section:not(.hero)');
     originalSections.forEach((section) => {
       section.style.display = '';
     });
@@ -190,48 +214,6 @@ function displaySearchResults(searchResults, type) {
   }
 }
 
-// Функция для фильтрации жанров (оставляем старую логику для страницы жанров)
-function filterGenres(searchResults) {
-  const allCards = $('.items-grid .item-card');
-  const sectionTitles = $('.section-title');
-  let visibleCount = 0;
-
-  if (
-    searchResults &&
-    searchResults.query &&
-    searchResults.query.trim() !== ''
-  ) {
-    // Скрываем все карточки сначала
-    allCards.forEach((card) => {
-      card.style.display = 'none';
-    });
-
-    // Показываем только найденные
-    if (searchResults.status === 'success') {
-      allCards.forEach((card) => {
-        const titleElement = card.querySelector('.item-title');
-        const title = titleElement?.textContent.trim();
-
-        const shouldShow = searchResults.results.genres.some(
-          (genre) => genre.name === title
-        );
-
-        if (shouldShow) {
-          card.style.display = '';
-          visibleCount++;
-        }
-      });
-    }
-  } else {
-    // Показываем все карточки
-    allCards.forEach((card) => {
-      card.style.display = '';
-    });
-  }
-
-  return visibleCount;
-}
-
 // Функция выполнения поиска для главной страницы
 async function performMainPageSearch(query) {
   if (!query || query.trim() === '') {
@@ -239,7 +221,6 @@ async function performMainPageSearch(query) {
     return;
   }
 
-  // Показываем индикатор загрузки
   let searchResultsContainer = $('#search-results-container');
   if (!searchResultsContainer) {
     searchResultsContainer = document.createElement('div');
@@ -259,7 +240,7 @@ async function performMainPageSearch(query) {
   searchResultsContainer.style.display = 'block';
 
   // Скрываем оригинальные секции
-  const originalSections = $('main > section:not(.hero)');
+  const originalSections = $$('main > section:not(.hero)');
   originalSections.forEach((section) => {
     section.style.display = 'none';
   });
@@ -281,24 +262,50 @@ async function performGenresSearch(query) {
 
   if (!query || query.trim() === '') {
     // Показываем все жанры
-    const allCards = $('.items-grid .item-card');
+    const allCards = $$('.items-grid--1gap .item-card');
     allCards.forEach((card) => {
       card.style.display = '';
     });
+
+    // Восстанавливаем видимость секции жанров
+    const genresSection = $('.section-title')?.parentElement;
+    if (genresSection) {
+      genresSection.style.display = '';
+    }
+
     if (resultHeader) {
       resultHeader.style.display = 'none';
     }
     return;
   }
 
-  // Создаем заголовок если его нет
+  // Создаем заголовок
   if (!resultHeader) {
     resultHeader = document.createElement('h3');
     resultHeader.className = 'search-results-header';
     const mainContainer = $('main');
     const sectionTitle = $('.section-title');
-    if (mainContainer && sectionTitle) {
-      mainContainer.insertBefore(resultHeader, sectionTitle);
+
+    if (mainContainer) {
+      if (sectionTitle && sectionTitle.parentElement) {
+        // Вставляем перед родительским элементом section-title
+        mainContainer.insertBefore(
+          resultHeader,
+          sectionTitle.parentElement
+        );
+      } else {
+        // Если нет section-title, вставляем после hero секции
+        const heroSection = $('.hero');
+        if (heroSection && heroSection.nextSibling) {
+          mainContainer.insertBefore(
+            resultHeader,
+            heroSection.nextSibling
+          );
+        } else {
+          // В крайнем случае добавляем в конец main
+          mainContainer.appendChild(resultHeader);
+        }
+      }
     }
   }
 
@@ -309,11 +316,66 @@ async function performGenresSearch(query) {
   const searchResults = await searchOnServer(query, 'genres');
 
   if (searchResults) {
-    const visibleCount = filterGenres(searchResults);
-    if (visibleCount > 0) {
+    const allCards = $$('.items-grid--1gap .item-card');
+    if (
+      searchResults.status === 'success' &&
+      searchResults.totalResults === 0
+    ) {
+      // Если ничего не найдено, скрываем все карточки
+      allCards.forEach((card) => {
+        card.style.display = 'none';
+      });
+
+      // Также можно скрыть заголовок "Жанры" и весь контейнер
+      const genresSection = $('.section-title')?.parentElement;
+      if (genresSection) {
+        genresSection.style.display = 'none';
+      }
+
+      resultHeader.textContent = 'Ничего не найдено';
+    } else if (
+      searchResults.status === 'success' &&
+      searchResults.results.genres.length > 0
+    ) {
+      // Восстанавливаем видимость секции
+      const genresSection = $('.section-title')?.parentElement;
+      if (genresSection) {
+        genresSection.style.display = '';
+      }
+
+      // Сначала скрываем все
+      allCards.forEach((card) => {
+        card.style.display = 'none';
+      });
+
+      // Показываем только найденные
+      let visibleCount = 0;
+      allCards.forEach((card) => {
+        const titleElement = card.querySelector('.item-title');
+        const title = titleElement?.textContent.trim();
+
+        const shouldShow = searchResults.results.genres.some(
+          (genre) => genre.name.toLowerCase() === title.toLowerCase()
+        );
+
+        if (shouldShow) {
+          card.style.display = '';
+          visibleCount++;
+        }
+      });
+
       resultHeader.textContent = `Найдено результатов: ${visibleCount}`;
     } else {
       resultHeader.textContent = 'Ничего не найдено';
+      allCards.forEach((card) => {
+        card.style.display = 'none';
+      });
+
+      // Скрываем секцию жанров
+      const genresSection = $('.section-title')?.parentElement;
+      if (genresSection) {
+        genresSection.style.display = 'none';
+      }
     }
   } else {
     resultHeader.textContent = 'Ошибка при выполнении поиска';
@@ -361,7 +423,7 @@ function initMainPageSearch() {
 
     searchTimeout = setTimeout(() => {
       performMainPageSearch(query);
-    }, 500); // Задержка 500мс, чтобы не спамить сервер
+    }, 1000);
   });
 }
 
@@ -371,6 +433,18 @@ function initGenresPageSearch() {
   const searchButton = $('.hero__search-button');
 
   if (!searchInput) return;
+
+  const testCards = document.querySelectorAll(
+    '.items-grid--1gap .item-card'
+  );
+
+  if (testCards.length === 0) {
+    const altCards1 = document.querySelectorAll('.item-card');
+
+    const altCards2 = document.querySelectorAll(
+      '[class*="item-card"]'
+    );
+  }
 
   // Обработчик для кнопки поиска
   if (searchButton) {
@@ -392,18 +466,20 @@ function initGenresPageSearch() {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
       performGenresSearch(e.target.value);
-    }, 500);
+    }, 1000);
   });
 }
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-  // Определяем на какой мы странице
   const currentPath = window.location.pathname;
 
   if (currentPath === '/' || currentPath === '/index') {
     initMainPageSearch();
   } else if (currentPath === '/genres') {
-    initGenresPageSearch();
+    console.log('Инициализация страницы жанров');
+    setTimeout(() => {
+      initGenresPageSearch();
+    }, 100);
   }
 });
