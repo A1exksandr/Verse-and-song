@@ -1,0 +1,48 @@
+
+    <div class="poet-container">
+
+      <div class="poet__profile">
+        <div class="poet__image-wrapper">
+          <img src="<%= author.imageUrl %>" alt="<%= author.name %>" class="poet__image">
+        </div>
+        <h1 class="poet__name"><%= author.name %></h1>
+        <p class="poet__info">
+
+
+        <% if (author.birthDate) { %>
+         <%= new Date(author.birthDate).getFullYear() %>
+        <% } %>
+
+        <% if (author.deathDate) { %>
+          - <%= new Date(author.deathDate).getFullYear() %>
+        <% } else  { %>
+          - по н.в
+        <% } %>
+
+        - <%= author.bio %>
+      </p>
+
+      </div>
+
+      <!-- <section class="poet__works">
+        <h2 class="poet__works-title">Популярные стихотворения</h2>
+        <ul class="poet__works-list">
+          <li class="poet__works-item">
+            <div class="poet__work-content">
+              <h3 class="poet__work-title">Береза</h3>
+              <p class="poet__work-subtitle">Береза</p>
+            </div>
+            <i class="fa-solid fa-ellipsis"></i>
+          </li>
+          <li class="poet__works-item">
+            <div class="poet__work-content">
+              <h3 class="poet__work-title">Черный человек</h3>
+              <p class="poet__work-subtitle">Черный человек</p>
+            </div>
+            <i class="fa-solid fa-ellipsis"></i>
+          </li>
+        </ul>
+      </section> -->
+
+
+    </div>
