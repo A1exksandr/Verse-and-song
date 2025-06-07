@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title><%= title || 'Об авторе' %></title>
+</head>
+<body>
+<!-- Шапка сайта -->
+<header class="header">
+    <div class="header__logo">
+        <span class="header__logo-text">Verse & Song</span>
+    </div>
+
+    <!-- Навигационная панель -->
+    <div class="header__nav-wrapper">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="/" class="header__nav-link">Главная</a></li>
+                <li class="header__nav-item"><a href="/authors" class="header__nav-link">Авторы</a></li>
+                <li class="header__nav-item"><a href="/genres" class="header__nav-link">Жанры</a></li>
+                <li class="header__nav-item"><a href="/about" class="header__nav-link">Об авторе</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__login">
+            <% if (user) { %>
+                <a class="header__login-link" href="/profile"><%= user.name %></a>
+            <% } else { %>
+                <a class="header__login-link" href="/login">Войти</a>
+            <% } %>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="creator-container">
+        <section class="creator__profile">
+            <div class="creator__image-wrapper">
+                <img src="<%= creator.image || 'https://placehold.co/400x400/f8e2cf/333333?text=Воробьев' %>" alt="<%= creator.name || 'Воробьев' %>" class="creator__image">
+            </div>
+            <h2 class="creator__title">Обо мне</h2>
+            <p class="creator__hi"><strong>Привет! Меня зовут <%= creator.name || 'Александр Воробьев' %>.</strong></p>
+            <p class="creator__info--bio"><%= creator.bio || 'Я студент факультета компьютерных наук (ФКН) Воронежского государственного университета (ВГУ). Мой путь начался с разработки приложений на Python. На данный момент я активно изучаю и разрабатываю веб-сайты, изучая современные технологии.' %></p>
+        </section>
+        <section class="creator__projects">
+            <h2 class="creator__title">Проекты</h2>
+            <p class="creator__form--info"><%= creator.projectsText || 'Здесь я делюсь своими проектами: веб-сайтами, которые я создаю, и другими работами. Вы можете найти примеры моих проектов на GitHub.' %>
+                GitHub: <a href="<%= creator.github || 'https://github.com/A1exksandr' %>" target="_blank" class="creator__link"><%= creator.github ? creator.github.replace('https://', '') : 'github.com/A1exksandr' %></a></p>
+        </section>
+        <section class="creator__contact">
+            <h2 class="creator__title">Связь со мной</h2>
+            <p class="creator__form--info">Если у вас есть предложения для сотрудничества или вопросы, пишите на почту: <a href="mailto:<%= creator.email || 'alexandr.answer@gmail.com' %>" class="creator__link"><%= creator.email || 'alexandr.answer@gmail.com' %></a></p>
+        </section>
+    </div>
+</main>
+</body>
+</html>

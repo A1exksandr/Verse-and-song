@@ -3,6 +3,7 @@ import cors from 'cors';
 import path from 'path';
 import expressLayouts from 'express-ejs-layouts';
 import pageRoutes from './routes/pageRoutes.js';
+import searchRoutes from './routes/searchRoutes.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -31,10 +32,12 @@ app.use('/', pageRoutes); // GET http://localhost:3000/ ---> ejs response
 
 // app.use('/authors', pageRoutes); // GET http://localhost:3000/authors ---> ejs response
 
-//GET genres
+// //GET genres
 // app.use('/genres', pageRoutes); // GET http://localhost:3000/genres ---> ejs response
 
-// GET раздел об авторе
+// // GET раздел об авторе
 // app.use('/about', pageRoutes); // GET http://localhost:3000/about ---> ejs response
+
+app.use('/api/v1/search', searchRoutes); // GET http://localhost:3000/api/v1/search?q=Пушкин
 
 export default app;

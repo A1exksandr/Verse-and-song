@@ -17,6 +17,7 @@ const authorSchema = new Schema(
       enum: ['poet', 'musician', 'writer', 'artist'],
       default: 'poet',
     },
+    imageUrl: String,
   },
   {
     timestamps: true,
