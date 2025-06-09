@@ -1,48 +1,92 @@
 
-    <div class="poet-container">
-
-      <div class="poet__profile">
-        <div class="poet__image-wrapper">
-          <img src="<%= author.imageUrl %>" alt="<%= author.name %>" class="poet__image">
-        </div>
-        <h1 class="poet__name"><%= author.name %></h1>
-        <p class="poet__info">
-
-
-        <% if (author.birthDate) { %>
-         <%= new Date(author.birthDate).getFullYear() %>
-        <% } %>
-
-        <% if (author.deathDate) { %>
-          - <%= new Date(author.deathDate).getFullYear() %>
-        <% } else  { %>
-          - по н.в
-        <% } %>
-
-        - <%= author.bio %>
-      </p>
-
-      </div>
-
-      <!-- <section class="poet__works">
-        <h2 class="poet__works-title">Популярные стихотворения</h2>
-        <ul class="poet__works-list">
-          <li class="poet__works-item">
-            <div class="poet__work-content">
-              <h3 class="poet__work-title">Береза</h3>
-              <p class="poet__work-subtitle">Береза</p>
-            </div>
-            <i class="fa-solid fa-ellipsis"></i>
-          </li>
-          <li class="poet__works-item">
-            <div class="poet__work-content">
-              <h3 class="poet__work-title">Черный человек</h3>
-              <p class="poet__work-subtitle">Черный человек</p>
-            </div>
-            <i class="fa-solid fa-ellipsis"></i>
-          </li>
-        </ul>
-      </section> -->
-
-
+<div class="poet-container">
+  <div class="poet__profile">
+    <div class="poet__image-wrapper">
+      <img src="<%= author.imageUrl %>" alt="<%= author.name %>" class="poet__image">
     </div>
+    <h1 class="poet__name">
+      <%= author.name %>
+    </h1>
+    <p class="poet__info">
+      <% if (author.birthDate) { %>
+        <%= new Date(author.birthDate).getFullYear() %>
+          <% } %>
+
+            <% if (author.deathDate) { %>
+              - <%= new Date(author.deathDate).getFullYear() %>
+                <% } else { %>
+                  - по н.в
+                  <% } %>
+
+                    - <%= author.bio %>
+    </p>
+  </div>
+
+  <% if (author.works && author.works.length> 0) { %>
+
+    <% if (poems && poems.length> 0) { %>
+      <section class="poet__works">
+        <h2 class="poet__works-title">Стихотворения (<%= poems.length %>)</h2>
+        <ul class="poet__works-list">
+          <% poems.forEach(poem=> { %>
+            <li class="poet__works-item">
+              <div class="poet__work-content">
+                <h3 class="poet__work-title">
+                  <a href="/works/<%= poem._id %>" class="poet__link">
+                    <%= poem.title %>
+                  </a>
+                </h3>
+                <p class="poet__work-subtitle">
+                  <% if (poem.publicationDate) { %>
+                    <%= new Date(poem.publicationDate).getFullYear() %> год
+                      <% } %>
+                        <% if (poem.genres && poem.genres.length> 0) { %>
+                          • <%= poem.genres.map(g=> g.name).join(', ') %>
+                            <% } %>
+                </p>
+              </div>
+              <i class="fa-solid fa-ellipsis"></i>
+            </li>
+            <% }); %>
+        </ul>
+      </section>
+      <% } %>
+
+        <!-- Показываем песни, если есть -->
+        <% if (songs && songs.length> 0) { %>
+          <section class="poet__works">
+            <h2 class="poet__works-title">Песни (<%= songs.length %>)</h2>
+            <ul class="poet__works-list">
+              <% songs.forEach(song=> { %>
+                <li class="poet__works-item">
+                  <div class="poet__work-content">
+                    <h3 class="poet__work-title">
+                      <a href="/works/<%= song._id %>" class="poet__link">
+                        <%= song.title %>
+                      </a>
+                    </h3>
+                    <p class="poet__work-subtitle">
+                      <% if (song.publicationDate) { %>
+                        <%= new Date(song.publicationDate).getFullYear() %> год
+                          <% } %>
+                            <% if (song.duration) { %>
+                              • <%= Math.floor(song.duration / 60) %>:<%= String(song.duration % 60).padStart(2, '0' )
+                                  %>
+                                  <% } %>
+                                    <% if (song.genres && song.genres.length> 0) { %>
+                                      • <%= song.genres.map(g=> g.name).join(', ') %>
+                                        <% } %>
+                    </p>
+                  </div>
+                  <i class="fa-solid fa-ellipsis"></i>
+                </li>
+                <% }); %>
+            </ul>
+          </section>
+          <% } %>
+            <% } else { %>
+              <section class="poet__works">
+                <p class="poet__no-works">У этого автора пока нет произведений в нашей базе данных.</p>
+              </section>
+              <% } %>
+</div>

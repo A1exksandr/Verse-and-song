@@ -18,6 +18,12 @@ const authorSchema = new Schema(
       default: 'poet',
     },
     imageUrl: String,
+    works: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Work',
+      },
+    ],
   },
   {
     timestamps: true,

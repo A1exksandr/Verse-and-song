@@ -2,7 +2,6 @@ import Works from '../models/Work.js';
 import Author from '../models/Author.js';
 import Genres from '../models/Genres.js';
 
-// В файле server/src/controllers/pageController.js
 export const getHomePage = async (req, res) => {
   try {
     const featuredPoems = await Works.find({
@@ -23,15 +22,6 @@ export const getHomePage = async (req, res) => {
 
     const featuredAuthors = await Author.find().limit(4);
 
-    // Добавьте эти логи!
-    console.log(
-      'Featured songs:',
-      featuredSongs.map((s) => ({
-        title: s.title,
-        author: s.author?.name,
-      }))
-    );
-
     res.render('index', {
       title: 'Главная страница',
       featuredPoems,
@@ -47,12 +37,11 @@ export const getHomePage = async (req, res) => {
   }
 };
 
-// TODO: отдать список жанров
+
 export const getGenresPage = async (req, res) => {
   try {
-    // Здесь можно получить список жанров, если он есть
+    // Здесь можно получить список жанров
     const genres = await Genres.find({});
-    console.log(JSON.stringify(genres, null, 2));
 
     res.render('genres', {
       title: 'Жанры',
@@ -67,12 +56,10 @@ export const getGenresPage = async (req, res) => {
   }
 };
 
-// TODO: отдать список авторов
+
 export const getAuthorsPage = async (req, res) => {
   try {
-    // Здесь можно получить список авторов
     const authors = await Author.find({});
-    console.log(JSON.stringify(authors, null, 2));
 
     res.render('authors', {
       title: 'Авторы',
@@ -90,29 +77,39 @@ export const getAuthorsPage = async (req, res) => {
 // Контроллер для конкретного автора
 export const getAuthorPage = async (req, res) => {
   try {
-    // Здесь получаем конкретного автора по id
-    const author = await Author.findById(req.params.id); // Предполагаем, что у автора есть поле works, содержащее его произведения
+    const author = await Author.findById(req.params.id).populate({
+      path: 'works',
+      populate: {
+        path: 'genres',
+        select: 'name',
+      },
+    });
 
-    console.log(JSON.stringify(author, null, 2));
-    console.log('======');
+    if (!author) {
+      return res.status(404).render('error', {
+        title: 'Автор не найден',
+        message: 'Автор с таким ID не найден.',
+      });
+    }
+
+
+    const poems = author.works.filter((work) => work.type === 'poem');
+    const songs = author.works.filter((work) => work.type === 'song');
+
 
     res.render('author', {
       title: author.name,
       author,
+      poems,
+      songs,
+      totalWorks: author.works.length,
     });
-
-    // if (!author) {
-    //   return res.status(404).render('error', {
-    //     title: 'Автор не найден',
-    //     message: 'Автор с таким ID не найден.',
-    //   });
-    // }
   } catch (error) {
     console.error('Ошибка при загрузке страницы автора:', error);
-    // return res.status(500).render('error', {
-    //   title: 'Ошибка',
-    //   message: 'Произошла ошибка при загрузке страницы автора.',
-    // });
+    return res.status(500).render('error', {
+      title: 'Ошибка',
+      message: 'Произошла ошибка при загрузке страницы автора.',
+    });
   }
 };
 
