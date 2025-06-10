@@ -113,4 +113,29 @@ export const getAuthorPage = async (req, res) => {
   }
 };
 
+export const getAboutPage = async (req, res) => {
+  try {
+    const creatorData = {
+      name: "Александр Воробьев",
+      image: "https://placehold.co/400x400/f8e2cf/333333?text=Александр Воробьев",
+      bio: "Я студент факультета компьютерных наук (ФКН) Воронежского государственного университета (ВГУ). Мой путь начался с разработки приложений на Python. На данный момент я активно изучаю и разрабатываю веб-сайты, изучая современные технологии.",
+      projectsText: "Здесь я делюсь своими проектами: веб-сайтами, которые я создаю, и другими работами. Вы можете найти примеры моих проектов на GitHub.",
+      github: "https://github.com/A1exksandr",
+      email: "alexandr.answer@gmail.com"
+    };
+
+    return res.render('about', {
+      title: 'Об авторе',
+      creator: creatorData,
+      user: req.user // если у вас есть аутентификация
+    });
+  }
+catch (error) {
+    console.error('Ошибка при загрузке страницы об авторе:', error);
+    return res.status(500).render('error', {
+      title: 'Ошибка',
+      message: 'Произошла ошибка при загрузке страницы об авторе.',
+    });
+  }
+};
 // TODO: отдать раздел об авторе
