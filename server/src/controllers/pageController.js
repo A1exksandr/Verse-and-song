@@ -2,6 +2,22 @@ import Works from '../models/Work.js';
 import Author from '../models/Author.js';
 import Genres from '../models/Genres.js';
 
+export const getWorkPage = async (req, res) => {
+  try {
+    const work = await Works.findById(req.params.id)
+      .populate('author', 'name')
+      .populate('genres', 'name');
+    const author = await Author.findById(work.author)
+    res.render('work', {
+      title: work.title,
+      work,
+      author,
+    });
+  } catch (error) {
+    console.error('Ошибка при загрузке страницы работы:', error);
+  }
+};
+
 export const getHomePage = async (req, res) => {
   try {
     const featuredPoems = await Works.find({
@@ -37,7 +53,6 @@ export const getHomePage = async (req, res) => {
   }
 };
 
-
 export const getGenresPage = async (req, res) => {
   try {
     // Здесь можно получить список жанров
@@ -55,7 +70,6 @@ export const getGenresPage = async (req, res) => {
     });
   }
 };
-
 
 export const getAuthorsPage = async (req, res) => {
   try {
@@ -92,10 +106,8 @@ export const getAuthorPage = async (req, res) => {
       });
     }
 
-
     const poems = author.works.filter((work) => work.type === 'poem');
     const songs = author.works.filter((work) => work.type === 'song');
-
 
     res.render('author', {
       title: author.name,
@@ -116,21 +128,22 @@ export const getAuthorPage = async (req, res) => {
 export const getAboutPage = async (req, res) => {
   try {
     const creatorData = {
-      name: "Александр Воробьев",
-      image: "https://placehold.co/400x400/f8e2cf/333333?text=Александр Воробьев",
-      bio: "Я студент факультета компьютерных наук (ФКН) Воронежского государственного университета (ВГУ). Мой путь начался с разработки приложений на Python. На данный момент я активно изучаю и разрабатываю веб-сайты, изучая современные технологии.",
-      projectsText: "Здесь я делюсь своими проектами: веб-сайтами, которые я создаю, и другими работами. Вы можете найти примеры моих проектов на GitHub.",
-      github: "https://github.com/A1exksandr",
-      email: "alexandr.answer@gmail.com"
+      name: 'Александр Воробьев',
+      image:
+        'https://placehold.co/400x400/f8e2cf/333333?text=Александр Воробьев',
+      bio: 'Я студент факультета компьютерных наук (ФКН) Воронежского государственного университета (ВГУ). Мой путь начался с разработки приложений на Python. На данный момент я активно изучаю и разрабатываю веб-сайты, изучая современные технологии.',
+      projectsText:
+        'Здесь я делюсь своими проектами: веб-сайтами, которые я создаю, и другими работами. Вы можете найти примеры моих проектов на GitHub.',
+      github: 'https://github.com/A1exksandr',
+      email: 'alexandr.answer@gmail.com',
     };
 
     return res.render('about', {
       title: 'Об авторе',
       creator: creatorData,
-      user: req.user // если у вас есть аутентификация
+      user: req.user, // если у вас есть аутентификация
     });
-  }
-catch (error) {
+  } catch (error) {
     console.error('Ошибка при загрузке страницы об авторе:', error);
     return res.status(500).render('error', {
       title: 'Ошибка',

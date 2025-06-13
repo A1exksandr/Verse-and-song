@@ -1,0 +1,23 @@
+
+  <section class="poem-section">
+    <div class="container">
+      <h1 class="poem-title"><%= work.title %></h1>
+      <p class="poem-author">Автор: <a href="/authors/<%= work.author._id %>" class="author-link"><%= author.name %></a></p>
+      <p class="poem-date">Дата публикации: <%= new Date(work.publicationDate).getFullYear() %></p>
+      <p class="poem-genre">
+        <% work.genres.forEach(genre=> { %>
+          <div class="item-card">
+            <h3 class="item-title">
+              <%= genre.name %>
+            </h3>
+          </div>
+          <% }); %>
+      </p>
+      <a href="/authors/<%= work.author._id %>" class="author-link">Ссылка на страницу автора</a>
+      <div class="poem-text">
+        <p>
+          <%= work.text %>
+        </p>
+      </div>
+    </div>
+  </section>
