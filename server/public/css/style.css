@@ -873,3 +873,39 @@ img.zoom {
   justify-content: space-between;
   margin-bottom: 5rem;
 }
+
+/* ===== error page ===== */
+.error-container {
+  min-height: 40vh;
+  /* центрируем по высоте */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.error-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  font-family: 'Noto Serif', serif;
+}
+
+.error-message {
+  font-size: 1.8rem;
+  color: #637587;
+  max-width: 60rem;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.error-back {
+  font-size: 1.6rem;
+  color: #1A80E5;
+  text-decoration: none;
+}
+
+.error-back:hover {
+  text-decoration: underline;
+}

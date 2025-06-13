@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 import Works from '../models/Work.js';
 import Author from '../models/Author.js';
 import Genres from '../models/Genres.js';
@@ -7,7 +9,7 @@ export const getWorkPage = async (req, res) => {
     const work = await Works.findById(req.params.id)
       .populate('author', 'name')
       .populate('genres', 'name');
-    const author = await Author.findById(work.author)
+    const author = await Author.findById(work.author);
     res.render('work', {
       title: work.title,
       work,
@@ -55,7 +57,6 @@ export const getHomePage = async (req, res) => {
 
 export const getGenresPage = async (req, res) => {
   try {
-    // Здесь можно получить список жанров
     const genres = await Genres.find({});
 
     res.render('genres', {
@@ -67,6 +68,61 @@ export const getGenresPage = async (req, res) => {
     res.status(500).render('error', {
       title: 'Ошибка',
       message: 'Произошла ошибка при загрузке страницы жанров.',
+    });
+  }
+};
+
+export const getGenrePage = async (req, res) => {
+  try {
+    const genre = await Genres.findById(req.params.id).lean();
+    if (!genre) {
+      return res.status(404).render('error', {
+        title: 'Жанр не найден',
+        message: 'Такого жанра нет в базе',
+      });
+    }
+
+    const worksByAuthor = await Works.aggregate([
+      {
+        $match: {
+          genres: new mongoose.Types.ObjectId(req.params.id),
+        },
+      },
+      {
+        $lookup: {
+          from: 'authors',
+          localField: 'author',
+          foreignField: '_id',
+          as: 'author',
+        },
+      },
+      { $unwind: '$author' },
+      {
+        $group: {
+          _id: '$author._id',
+          authorName: { $first: '$author.name' },
+          works: {
+            $push: {
+              _id: '$_id',
+              title: '$title',
+              type: '$type',
+            },
+          },
+        },
+      },
+      { $sort: { authorName: 1 } },
+    ]);
+
+    res.render('genre', {
+      title: genre.name,
+      genre,
+      worksByAuthor,
+    });
+  } catch (err) {
+    console.error('Ошибка жанровой страницы:', err);
+    res.status(500).render('error', {
+      title: 'Ошибка',
+      message: 'Не удалось загрузить жанр',
     });
   }
 };

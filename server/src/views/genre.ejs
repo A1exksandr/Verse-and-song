@@ -1,0 +1,32 @@
+<section class="hero genres-hero">
+  <div class="hero__content">
+    <h1 class="hero__title">
+      <%= genre.name %>
+    </h1>
+  </div>
+</section>
+
+<section class="authors">
+  <% if (!worksByAuthor.length) { %>
+    <p>В этом жанре пока нет произведений.</p>
+    <% } %>
+
+      <% worksByAuthor.forEach(group=> { %>
+        <h2 class="authors__title">
+          <%= group.authorName %>
+        </h2>
+
+        <ul class="authors__item">
+          <% group.works.forEach(work=> { %>
+            <li class="item-subtitle">
+              <a href="/works/<%= work._id %>">
+                <%= work.title %>
+                  <% if (work.type==='song' ) { %>
+                    <i class="fas fa-music"></i>
+                    <% } %>
+              </a>
+            </li>
+            <% }) %>
+        </ul>
+        <% }) %>
+</section>

@@ -10,6 +10,7 @@ router.get('/authors', pageController.getAuthorsPage); // GET http://localhost:3
 router.get('/authors/:id', pageController.getAuthorPage) // GET http://localhost:3000/authors/683dd2abff2e924c9d2c1a0d
 
 router.get('/genres', pageController.getGenresPage); // GET http://localhost:3000/genres
+router.get('/genres/:id', pageController.getGenrePage); // GET http://localhost:3000/genres/683dd2abff2e924c9d2c1a0d
 
  router.get('/about', pageController.getAboutPage); // GET http://localhost:3000/about
 
