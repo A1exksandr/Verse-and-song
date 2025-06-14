@@ -11,9 +11,8 @@ router.get('/authors/:id', pageController.getAuthorPage) // GET http://localhost
 
 router.get('/genres', pageController.getGenresPage); // GET http://localhost:3000/genres
 
+ router.get('/about', pageController.getAboutPage); // GET http://localhost:3000/about
 
-
-// TODO: сделать самостоятельно
-// router.get('/about', pageController.getAboutPage); // GET http://localhost:3000/about
+ router.get('/works/:id', pageController.getWorkPage); // GET http://localhost:3000/works/:id
 
 export default router;
