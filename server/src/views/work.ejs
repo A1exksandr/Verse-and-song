@@ -6,11 +6,7 @@
       <p class="poem-date">Дата публикации: <%= new Date(work.publicationDate).getFullYear() %></p>
       <p class="poem-genre">
         <% work.genres.forEach(genre=> { %>
-          <div class="item-card">
-            <h3 class="item-title">
               <%= genre.name %>
-            </h3>
-          </div>
           <% }); %>
       </p>
       <a href="/authors/<%= work.author._id %>" class="author-link">Ссылка на страницу автора</a>
