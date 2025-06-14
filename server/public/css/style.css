@@ -706,7 +706,7 @@ main {
 .poem-text {
   font-size: 1.8rem;
   /* Увеличивает размер текста */
-  line-height: 0.5;
+  line-height: 2rem;
   /* Увеличивает межстрочное расстояние */
   white-space: pre-wrap;
   /* Сохраняет переносы строк */
